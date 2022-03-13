@@ -1,0 +1,10 @@
+﻿Es soll ein zweiter Spielmodus hinzugefügt werden, bei dem sich der Spieler eine Zahl überlegt, und der
+Computer versucht, sie zu erraten. Entsprechend gibt der Computer seinen Rateversuch aus.
+Der Nutzer muss eingeben, ob die Zahl größer, kleiner oder gleich ist. Auch hier werden am Ende die benötigten
+Versuche ausgegeben.
+* Zum Start des Programms hat der Nutzer die Auswahl zwischen den beiden Modi.
+* Versuche eine "KI" zu schreiben, die früher oder später auf das richtige Ergebnis kommt
+	* Was ist die optimale Strategie für dieses Problem?
+* Die KI sollte in der Lage sein zu erkennen, wenn der Spieler lügt (wenn seine Eingaben keine valide Zahl
+	erlauben) und entsprechend darauf reagieren.
+* Es sollte sinnvoll mit Methoden gearbeitet werden, damit der Code übersichtlich und strukturiert bleibt

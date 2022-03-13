@@ -1,0 +1,4 @@
+﻿Es soll ein zweiter Sortier-Algorithmus eingebaut werden, der auf andere Art und Weise zum gleichen Ergebnis kommt.
+Für mehrere Listen mit je 100.000 Zahlen soll jeweils die Laufzeit gemessen werden.
+Die Ergebnisse sollen ausgewertet werden.
+Welche Sortier-Agorithmen gibt es? Welche hast du implementiert? Wie unterscheidet sich die Performance?

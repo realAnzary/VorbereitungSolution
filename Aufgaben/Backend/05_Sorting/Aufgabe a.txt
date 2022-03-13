@@ -1,0 +1,4 @@
+﻿Der Nutzer gibt eine Beliebige Anzahl an Zahlen ein.
+Das Programm gibt die Zahlen in sortierter Reihenfolge wieder aus.
+* Der Sortier-Algorithmus ist selbstständig in einer eigenen Methode zu implementieren, welche eine
+	Liste oder einen Array von ints entgegennimmt, und die sortierte Liste oder Array ausgibt.

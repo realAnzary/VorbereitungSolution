@@ -1,0 +1,7 @@
+﻿Es soll 'Spiel' entstehen, bei dem der Computer verdeckt eine Zufallszahl zwischen 1 und 100 auswürfelt.
+Der Spieler soll diese Zahl erraten. Dazu wird er nach einer Eingabe gefragt.
+Der Computer gibt aus, ob die eingegebene Zahl größer oder kleiner ist, als die Ausgewürfelte.
+Dies wiederholt sich so lange, bis der Spieler die korrekte Zahl erraten hat.
+Im Anschluss bekommt der Nutzer die Anzahl der Versuche ausgegeben, die er benötigt hat, und bekommt die
+Option, das Spiel zu beenden, oder neu zu starten.
+* Die Eingaben des Nutzers sollten entsprechend validiert und bei Fehleingaben erneut abgefragt werden.

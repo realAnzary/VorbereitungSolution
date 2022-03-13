@@ -1,0 +1,10 @@
+﻿Es soll ein Programm geschrieben werden, dass den Umfang und Flächeninhalt von verschiedenen geometrischen
+Formen berechnet.
+* Der Nutzer wird nach der Form gefragt (Kreis, Rechteck, Rechtwinkliges Dreieck als Start), danach wird er
+	entsprechend nach den benötigten Größen gefragt (Radius oder Durchmesser, Seitenlängen etc).
+* Das Programm errechnet den Umfang und den Flächeninhalt undgibt diese aus.
+* Der Nutzer erhält danach die Option, von vorne zu starten, oder das Programm zu beenden.
+* Nutzereingaben müssen auf Validität geprüft werden. Es soll nich möglich sein, das Programm durch
+	fehlerhafte Eingaben zum Absturz zu bringen.
+* Es sollten Methoden und/oder Klassen verwendet werden, um den Code übersichtlich und strukturiert zu
+	gestalten.

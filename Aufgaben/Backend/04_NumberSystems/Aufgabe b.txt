@@ -1,0 +1,5 @@
+﻿Das Programm soll umgeschrieben werden, sodass man von und zu beliebigen Basen zwischen 2-35 konvertieren kann.
+* Input sind dann die Startbasis, der Wert und die Zielbasis. Output ist der Wert in der Zielbasis.
+* Der Code sollte so gekapselt sein, dass eine Methode existiert, in der lediglich die Umrechnung stattfindet
+	und keine Eingabe/Ausgabe, sodass diese auch in einer dll/Webanwendung oder ähnlichem verwendet werden kann.
+* Warum soll die Umrechnung nur vonn Basis 2-35 möglich sein?

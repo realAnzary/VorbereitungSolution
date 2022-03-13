@@ -1,0 +1,3 @@
+﻿Das Spiel gegen den Computer soll implementiert werden.
+* Man wählt am Anfang, ob man gegen einen menschlichen Gegner, oder die KI spielt.
+* Was für KI-Verhalten fallen dir ein? Lassen sich damit mehrere Schwierigkeitsgrade implementieren?

@@ -1,0 +1,10 @@
+﻿Es soll ein TicTacToe-Spiel in der Konsole für 2 Spieler entstehen.
+Erarbeite vorher schriftlich ein Konzept deines Programmes:
+* Wie sieht das Spielfeld aus?
+* Wie funktionieren die Eingaben?
+* Was für Methoden werden benötigt?
+* Wo sind potentielle Probleme absehbar, und welche Lösungsansätze gibt es dafür?
+
+Die genaue Umsetzung obliegt dem Entwickler. Einzige Vorgaben:
+* Das Programm soll aber selbstständig feststellen, wenn ein Spieler gewonnen hat
+* Es ist explizit darauf zu achten, den Code lesbar und wartbar zu gestalten.

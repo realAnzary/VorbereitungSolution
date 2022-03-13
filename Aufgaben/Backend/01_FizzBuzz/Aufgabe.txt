@@ -1,0 +1,4 @@
+﻿Es sollen die Zahlen von 1 bis 100 in der Konsole ausgegeben werden, wobei jede durch 3 teilbare Zahl durch
+ein „Fizz“ ersetzt wird, jede durch 5 teilbare Zahl durch ein „Buzz“.
+Jede Zahl, die durch 3 und 5 teilbar ist, wird durch „FizzBuzz“ ersetzt.
+Also „1, 2, Fizz, 3, 4, Buzz“ etc.

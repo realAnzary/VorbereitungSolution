@@ -1,0 +1,3 @@
+﻿Die die Eingabe der Zahlen passiert nicht mehr manuell, sondern sie werden aus einer .txt-Datei eingelesen.
+Die Ausgabe erfolgt sowohl in die Konsole, als auch in eine neue .txt-Datei
+* Stichwörter: System.IO, File.Read, File.Write

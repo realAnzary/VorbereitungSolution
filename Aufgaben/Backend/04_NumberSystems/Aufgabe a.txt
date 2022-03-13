@@ -1,0 +1,3 @@
+﻿Es soll eine Anwendung erstellt werden bei dem der Nutzer eine Zahl in Binär, Dezimal oder Hexadezimal eingibt.
+Die Zahl soll dann in die jeweils anderen Zahlensysteme umgewandelt und in desen ausgegeben werden.
+* Es muss wieder entsprechend auf Fehleingaben reagiert werden.

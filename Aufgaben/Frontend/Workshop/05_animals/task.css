@@ -1,0 +1,21 @@
+﻿#AnimalsWrapper {
+    display: flex;
+    flex: 1;
+    margin-top: 5px;
+    align-items: center;
+}
+
+#AnimalsWrapper > div {
+    margin: 10px 0;
+}
+
+#AnimalsWrapper > div + div {
+    margin-left: 5px;
+}
+
+.Fence {
+    border: thin solid #808080;
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+}
