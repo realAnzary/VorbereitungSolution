@@ -12,23 +12,23 @@ namespace Backend_1
             }
 		}
 
-		public static string evaluate(int number)
+		public static string evaluate(int num)
         {
-            if (number % 5 == 0 && number % 3 == 0)
+            if (num % 5 == 0 && num % 3 == 0)
             {
 				return "FizzBuzz";
             }
-            else if (number % 5 == 0)
+            else if (num % 5 == 0)
             {
                 return "Buzz";
             }
-            else if (number % 3 == 0)
+            else if (num % 3 == 0)
             {
                 return "Fizz";
             }
             else
             {
-                return $"{number}";
+                return $"{num}";
             }
         }
         public static string evaluateTernary(int num)
