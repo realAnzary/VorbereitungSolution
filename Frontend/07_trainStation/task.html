@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Workshop 1</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+  <link href="task.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="Main">
+    <div class="TaskDescription">
+      <h1>
+  Bahnhof
+</h1>
+      <div>
+  <p>Aufgabe: Erstelle einen Bahnhof, aus dem Züge rausfahren. Versuche dabei, möglichst objektorientiert
+    zu arbeiten.</p>
+  <div>
+    <ol>
+      <li>
+        <span>Erstelle den Bahnhof.</span>
+        <ol>
+          <li>Lege ein rechteckigen, grauen Container an, der sich links befindet (Hochkannt).
+            Der Kopfbahnhof hat den Namen Jena.</li>
+          <li>Am Anfang ist der Bahnhof recht klein. Es gibt nur ein Gleis, welches raus führt.</li>
+          <li>Leg oberhalb einen Button "Start" an. Bei Klick fährt der Zug "Dresden" (100px lang, Farbe rot,
+            Name "Dresden" steht auf dem Zug) aus den Bahnhof.</li>
+          <li>Wird der Knopf wiederholt geklickt, wird der Zug gelöscht und der Zug fährt wiederholt aus dem
+            Bahnhof.</li>
+          <li>Klickt man auf den Zug, hält er an. Klickt man wieder auf diesen, setzt er seine Fahrt fort.</li>
+        </ol>
+      </li>
+      <li>
+        <span>Jena wächst und der Bahnhof wird größer.</span>
+        <ol>
+          <li>Die Gleiszahl wird auf 5 erhöht. Der Bahnof kann sich also dynamisch vergrößern.</li>
+          <li>
+            Per Klick auf dem Button "Start" fahren folgende Züge mit einer Verzögerung aus dem Bahnhof los.
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Länge</th>
+                  <th>Farbe</th>
+                  <th>Geschwindigkeit</th>
+                  <th>Abfahrtszeit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Köln</td>
+                  <td>175px</td>
+                  <td>gelb</td>
+                  <td>90px/Sekunde</td>
+                  <td>+1 Sekunde</td>
+                </tr>
+                <tr>
+                  <td>Münster</td>
+                  <td>200px</td>
+                  <td>blau</td>
+                  <td>200px/Sekunde</td>
+                  <td>+3 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Berlin</td>
+                  <td>125px</td>
+                  <td>rosa</td>
+                  <td>130px/Sekunde</td>
+                  <td>+5 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Erfurt</td>
+                  <td>140px</td>
+                  <td>lila</td>
+                  <td>30px/Sekunde</td>
+                  <td>+4 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Cottbus</td>
+                  <td>190px</td>
+                  <td>gelb</td>
+                  <td>45px/Sekunde</td>
+                  <td>+3 Sekunden</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>Der Nutzer kann die Geschwindigkeit des Zuges erkennen.</li>
+          <li>Am Bahnhof ist optisch erkennbar, wieviele Züge sich derzeit im Bahnhof befinden.</li>
+        </ol>
+      </li>
+      <li>
+        <span>Es muss Ordnung her: Eine Abfahrtstafel.</span>
+        <ol>
+          <li>Lege oberhalb eine Tabelle mit folgenden Spalten an: Abfahrtszeit, Zugname, Gleis.</li>
+          <li>Bei Klick auf den Button "Start" wird die Abfahrtstafel befüllt. Es werden nur so viele
+            Abfahrten wie Gleise angezeigt.</li>
+        </ol>
+      </li>
+      <li>
+        <span>Ein neuer Zugfahrplan ist erschienen.</span>
+        <ol>
+          <li>Pro Gleis darf nur ein Zug fahren. Soll ein Zug abfahren und es befindet sich noch ein Zug auf dem Gleis, muss der Zug warten.
+            Diese Wartezeit ist die Verspätung (in Sekunden) und soll als neue Spalte auf der Abfahrtstafel & am Zug angezeigt werden.</li>
+          <li>Lass folgende Züge bei einem Klick auf den Button "Start" fahren.
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Länge</th>
+                  <th>Farbe</th>
+                  <th>Geschwindigkeit</th>
+                  <th>Gleis</th>
+                  <th>Abfahrtszeit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Köln</td>
+                  <td>175px</td>
+                  <td>gelb</td>
+                  <td>90px/Sekunde</td>
+                  <td>1</td>
+                  <td>+1 Sekunde</td>
+                </tr>
+                <tr>
+                  <td>Münster</td>
+                  <td>200px</td>
+                  <td>blau</td>
+                  <td>200px/Sekunde</td>
+                  <td>1</td>
+                  <td>+5 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Berlin</td>
+                  <td>125px</td>
+                  <td>rosa</td>
+                  <td>130px/Sekunde</td>
+                  <td>2</td>
+                  <td>+2 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Erfurt</td>
+                  <td>140px</td>
+                  <td>lila</td>
+                  <td>30px/Sekunde</td>
+                  <td>3</td>
+                  <td>+4 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Cottbus</td>
+                  <td>90px</td>
+                  <td>gelb</td>
+                  <td>45px/Sekunde</td>
+                  <td>2</td>
+                  <td>+1 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Rostock</td>
+                  <td>290px</td>
+                  <td>hellblau</td>
+                  <td>130px/Sekunde</td>
+                  <td>4</td>
+                  <td>+1 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Görlitz</td>
+                  <td>90px</td>
+                  <td>schwarz</td>
+                  <td>130px/Sekunde</td>
+                  <td>5</td>
+                  <td>+5 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Freiburg</td>
+                  <td>145px</td>
+                  <td>grau</td>
+                  <td>90px/Sekunde</td>
+                  <td>4</td>
+                  <td>+10 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Frankfurt</td>
+                  <td>80px</td>
+                  <td>grün</td>
+                  <td>45px/Sekunde</td>
+                  <td>3</td>
+                  <td>+10 Sekunden</td>
+                </tr>
+                <tr>
+                  <td>Kassel</td>
+                  <td>120px</td>
+                  <td>braun</td>
+                  <td>25px/Sekunde</td>
+                  <td>1</td>
+                  <td>+15 Sekunden</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <span>Neue Ereignisse beeinflussen den Zugverkehr.</span>
+        <ol>
+          <li>Lege neben dem Button "Start" einen weiteren Button "Ereignis" an.</li>
+          <li>Bei Klick auf den Button wird von den Zügen, die aktuell fahren, einer zufällig ausgewählt.</li>
+          <li>Danach wird eines der folgenden Ereignisse zufällig ausgewählt:
+            <ol>
+              <li>Defekt: Der Zug wird um 30% langsamer.</li>
+              <li>Abkopplung: 1 Waggon wird abgehängt und der Zug wird 30% kürzer.</li>
+              <li>Ankopplung: 1 Waggon wird angehängt und der Zug wird 30% länger.</li>
+            </ol>
+          </li>
+          <li>Die Ereignisse haben einen Einfluss auf den Zugverkehr: Züge und Abfahrtstafel sind
+            betroffen und müssen aktualisiert werden</li>
+        </ol>
+      </li>
+      <li>Binde das vue-Framework ein.</li>
+    </ol>
+  </div>
+</div>
+    </div>
+    <div id="trainStation" class="Task">
+  <script src="task.js"></script>
+    </div>
+  </div>
+</body>
+</html>

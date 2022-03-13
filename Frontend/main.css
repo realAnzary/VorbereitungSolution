@@ -1,0 +1,51 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(50, 50, 50);
+    color:white;
+}
+
+#Main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#Main > div {
+    border: thin solid lightgray;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#Main > div + div {
+    margin-top: 10px;
+}
+
+#TaskChange {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Task {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.TaskDescription {
+    min-height: 100px;
+    max-height: 400px;
+    overflow: auto;
+    resize: vertical;
+}
+
+.TaskDescription table {
+    margin: 10px 0;
+}
