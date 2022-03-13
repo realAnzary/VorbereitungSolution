@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{A40FF9A1-A4F4-43EC-870D-156A3C16081E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{297A6622-E78D-4799-9D8A-6FA4207C736A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend_1", "Backend_1\Backend_1.csproj", "{4C29FD0C-99EA-43A1-9EBE-DA893CE73943}"
@@ -14,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Aufgaben.html = Aufgaben.html
 		Style.css = Style.css
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend_1", "Frontend_1", "{D144B28F-66A7-4267-8588-1023BDA878EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,7 +29,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4C29FD0C-99EA-43A1-9EBE-DA893CE73943} = {297A6622-E78D-4799-9D8A-6FA4207C736A}
-		{D144B28F-66A7-4267-8588-1023BDA878EF} = {A40FF9A1-A4F4-43EC-870D-156A3C16081E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9ACC6D9-1129-4022-BF34-FAFED9DBDE73}
