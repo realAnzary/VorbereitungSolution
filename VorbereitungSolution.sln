@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{297A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend_1", "Backend_1\Backend_1.csproj", "{4C29FD0C-99EA-43A1-9EBE-DA893CE73943}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aufgaben", "Aufgaben", "{52554C65-D54D-4C23-BDF0-FB381A2F8810}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{870C5C81-C254-4569-85BA-770999B0FB72}"
 	ProjectSection(SolutionItems) = preProject
 		Aufgaben.html = Aufgaben.html
 		Style.css = Style.css
