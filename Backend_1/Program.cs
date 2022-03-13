@@ -34,8 +34,7 @@ namespace Backend_1
 		public static string evaluateTernary(int num)
 		{
 			string result = "";
-
-			 return result = (num % 5 == 0 & num % 3 == 0) ? "FizzBuzz" : (num % 5 == 0) ? "Buzz" : (num % 3 == 0) ? "Fizz" : $"{num}";
+			return result = (num % 5 == 0 & num % 3 == 0) ? "FizzBuzz" : (num % 5 == 0) ? "Buzz" : (num % 3 == 0) ? "Fizz" : $"{num}";
 		}
 	}
 }
