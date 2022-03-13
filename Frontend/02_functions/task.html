@@ -1,61 +1,75 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>Workshop 1</title>
     <link rel="stylesheet" type="text/css" href="../main.css">
-  <link href="task.css" rel="stylesheet" />
+    <link href="task.css" rel="stylesheet" />
 </head>
+
 <body>
-  <div id="Main">
-    <div class="TaskDescription">
-      <h1>
-  Schreibe die ersten Funktionen
-</h1>
-      <div>
-  <p>Aufgabe: Schreibe verschiedene kleine Funktionen</p>
-  <div>
-    <ol>
-      <li>
-        <span>Begrüße den Benutzer</span>
-        <ol>
-          <li>Erstelle eine Inputfeld vom Typ Text mit der Id <b>TextInput</b> in dem man seinen Namen eintragen kann</li>
-          <li>Erstelle einen Button</li>
-          <li>
-            <span>Wird der Button geklickt geschieht folgendes:</span>
-            <ol>
-              <li>Auslesen der <b>TextInput</b></li>
-              <li>Eine Alert-Nachricht mit folgendem Inhalt wird eingeblendet: "Willkommen auf der Seite, [Name]"</li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <span>Erstelle einen Button, der bei einem Klick folgendes tut</span>
-        <ol>
-          <li>Den Wert aus dem Feld <b>TextInput</b> auslesen</li>
-          <li>Überprüfen, ob der Wert eine Zahl ist</li>
-          <li>Wenn der Wert eine Zahl ist, wird in das Feld <b>TextInput</b> das Produkt der Zahl mit 2 geschrieben</li>
-          <li>Wenn es keine Zahl ist, soll die Funktion "showError" mit einer passenden Fehlermeldung aufgerufen werden</li>
-        </ol>
-      </li>
-      <li>Schreibe die Funktion "clearError", die die Hinweisbox <b>ErrorWarnings</b> wieder leert</li>
-      <li>
-        <span>Addiere zwei Zahlen</span>
-        <ol>
-          <li>Erstelle 3 Inputfelder vom Typ Number mit den Ids <b>NumberInput1</b>, <b>NumberInput2</b> und <b>NumberOutput</b></li>
-          <li>Erstelle ein DropDown-Menü (<a href="https://www.w3schools.com/tags/tag_option.asp">select</a>) mit den vier Grundrechenarten (+/-/&#215;/&#247;)</li>
-          <li>Erstelle einen Button, der bei einem Klick die Berechnung von <b>NumberInput1</b> und <b>NumberInput2</b> mit der vorher ausgewählten Rechenoperation in <b>NumberOuput</b> schreibt</li>
-          <li>Arbeite auch hier mit der Hinweisbox</li>
-        </ol>
-      </li>
-    </ol>
-  </div>
-</div>
+    <div id="Main">
+        <div class="TaskDescription">
+            <h1>
+                Schreibe die ersten Funktionen
+            </h1>
+            <div>
+                <p>Aufgabe: Schreibe verschiedene kleine Funktionen</p>
+                <div>
+                    <ol>
+                        <li>
+                            <span>Begrüße den Benutzer</span>
+                            <ol>
+                                <li>Erstelle eine Inputfeld vom Typ Text mit der Id <b>TextInput</b> in dem man seinen Namen eintragen kann
+                                </li>
+                                <li>Erstelle einen Button</li>
+                                <li>
+                                    <span>Wird der Button geklickt geschieht folgendes:</span>
+                                    <ol>
+                                        <li>Auslesen der <b>TextInput</b></li>
+                                        <li>Eine Alert-Nachricht mit folgendem Inhalt wird eingeblendet: "Willkommen auf der Seite, [Name]"
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <span>Erstelle einen Button, der bei einem Klick folgendes tut</span>
+                            <ol>
+                                <li>Den Wert aus dem Feld <b>TextInput</b> auslesen</li>
+                                <li>Überprüfen, ob der Wert eine Zahl ist</li>
+                                <li>Wenn der Wert eine Zahl ist, wird in das Feld <b>TextInput</b> das Produkt der Zahl mit 2 geschrieben
+                                </li>
+                                <li>Wenn es keine Zahl ist, soll die Funktion "showError" mit einer passenden Fehlermeldung aufgerufen werden
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Schreibe die Funktion "clearError", die die Hinweisbox <b>ErrorWarnings</b> wieder leert</li>
+                        <li>
+                            <span>Addiere zwei Zahlen</span>
+                            <ol>
+                                <li>Erstelle 3 Inputfelder vom Typ Number mit den Ids <b>NumberInput1</b>, <b>NumberInput2</b> und
+                                    <b>NumberOutput</b>
+                                </li>
+                                <li>Erstelle ein DropDown-Menü (<a href="https://www.w3schools.com/tags/tag_option.asp">select</a>) mit den vier Grundrechenarten (+/-/&#215;/&#247;)</li>
+                                <li>Erstelle einen Button, der bei einem Klick die Berechnung von <b>NumberInput1</b> und
+                                    <b>NumberInput2</b> mit der vorher ausgewählten Rechenoperation in <b>NumberOuput</b> schreibt
+                                </li>
+                                <li>Arbeite auch hier mit der Hinweisbox</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div id="functions" class="Task">
+            <input type="text" name="Name" id="input-name">
+            <input type="button" value="Submit" id="btn-submit">
+        </div>
+        <div id="ErrorWarnings"></div>
+        <script src="task.js"></script>
     </div>
-    <div id="functions" class="Task">
-  <div id="ErrorWarnings"></div>
-  <script src="task.js"></script>
     </div>
-  </div>
 </body>
+
 </html>
