@@ -1,58 +1,77 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>Workshop 1</title>
     <link rel="stylesheet" type="text/css" href="../main.css">
-  <link href="task.css" rel="stylesheet" />
+    <link href="task.css" rel="stylesheet" />
 </head>
+
 <body>
-  <div id="Main">
-    <div class="TaskDescription">
-      <h1>
-  Dako Workshop "Grundlagen Html & Javascript"
-</h1>
-      <div>
-  <p>Aufgabe: Der Nutzer kann verschiedene Elemente auf eine Liste setzen und es wird die Anzahl der jeweiligen Elemente ausgegeben</p>
-  <div>
-    <ol>
-      <li>
-        <span>Erstelle zwei divs</span>
-        <ul>
-          <li>Links für die Eingabe mit einer Textarea</li>
-          <li>Rechts für die Ausgabe mit einer Tabelle</li>
-        </ul>
-      </li>
-      <li>
-        Füge einen Button ein, der bei einem Klick den String im Textarea invertiert
-      </li>
-      <li>
-        <span>Füge zwischen den beiden Textarea einen weiteren Button ein, welcher folgendes bei einem Klick tut:</span>
-        <ul>
-          <li>Leeren der Ausgabetabelle</li>
-          <li>Auslesen der Eingabe-Textarea</li>
-          <li>Trennen des Strings bei einem Kommas in eine Liste von Strings</li>
-          <li>
-            <span>Befüllen der Tabelle nach folgendem Schema</span>
-            <ul>
-              <li>Erste Spalte: Substring</li>
-              <li>Zweite Spalte: Wie oft ist der Substring im String vorgekommen</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <span>Füge neben dem Button eine Checkbox ein</span>
-        <ul>
-          <li>Ist die Checkbox angehakt, sollen die Zeilen nach der Anzahlspalte sortiert werden </li>
-        </ul>
-      </li>
-    </ol>
-  </div>
-</div>
+    <div id="Main">
+        <div class="TaskDescription">
+            <h1>
+                Dako Workshop "Grundlagen Html & Javascript"
+            </h1>
+            <div>
+                <p>Aufgabe: Der Nutzer kann verschiedene Elemente auf eine Liste setzen und es wird die Anzahl der jeweiligen Elemente ausgegeben</p>
+                <div>
+                    <ol>
+                        <li>
+                            <span>Erstelle zwei divs</span>
+                            <ul>
+                                <li>Links für die Eingabe mit einer Textarea</li>
+                                <li>Rechts für die Ausgabe mit einer Tabelle</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Füge einen Button ein, der bei einem Klick den String im Textarea invertiert
+                        </li>
+                        <li>
+                            <span>Füge zwischen den beiden Textarea einen weiteren Button ein, welcher folgendes bei einem Klick tut:</span>
+                            <ul>
+                                <li>Leeren der Ausgabetabelle</li>
+                                <li>Auslesen der Eingabe-Textarea</li>
+                                <li>Trennen des Strings bei einem Kommas in eine Liste von Strings</li>
+                                <li>
+                                    <span>Befüllen der Tabelle nach folgendem Schema</span>
+                                    <ul>
+                                        <li>Erste Spalte: Substring</li>
+                                        <li>Zweite Spalte: Wie oft ist der Substring im String vorgekommen</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Füge neben dem Button eine Checkbox ein</span>
+                            <ul>
+                                <li>Ist die Checkbox angehakt, sollen die Zeilen nach der Anzahlspalte sortiert werden </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div id="tables" class="Task">
+            <div class="wrapper">
+                <div class="eingabe">
+                    <div class="sub-wrapper">
+                        <textarea name="inputare" id="input-area" cols="30" rows="10"></textarea>
+                        <input type="button" value="Invertieren" id="btn-invert">
+                    </div>
+                </div>
+                <div class="sub-wrapper">
+                    <input type="button" value="Auslesen" id="btn-evaluate">
+                    <label for="checkbox">Liste Sortiert ausgeben</label>
+                    <input type="checkbox" name="checkbox-sort" id="checkbox-sort">
+                </div>
+                <div class="ausgabe">
+                    <table id="table-output"></table>
+                </div>
+            </div>
+            <script src="task.js"></script>
+        </div>
     </div>
-    <div id="tables" class="Task">
-  <script src="task.js"></script>
-    </div>
-  </div>
 </body>
+
 </html>
