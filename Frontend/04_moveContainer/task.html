@@ -1,77 +1,81 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>Workshop 1</title>
     <link rel="stylesheet" type="text/css" href="../main.css">
-  <link href="task.css" rel="stylesheet" />
+    <link href="task.css" rel="stylesheet" />
 </head>
+
 <body>
-  <div id="Main">
-    <div class="TaskDescription">
-      <h1>
-  Dako Workshop "Grundlagen Html & Javascript"
-</h1>
-      <div>
-  <p>Aufgabe: Lege einen Container an, der sich durch Klick auf einen Button verschiebt.</p>
-  <div>
-    <ol>
-      <li>
-        <span>Erzeuge einen div-Container mit der Id MoveContainer mit folgenden CSS-Eigenschaften (task.css):</span>
-        <ul>
-          <li>Breite (width): 50px</li>
-          <li>Höhe (height): 50px</li>
-          <li>Hintergrundfarbe (background-color): blau</li>
-          <li>Rand (border): rot mit Breite von 3px</li>
-          <li>Position: absolute</li>
-          <li>Position top: 0</li>
-          <li>Position left: 0</li>
-        </ul>
-      </li>
-      <li>
-        <span>Ändere die Hintergrundfarbe des Containers #MoveContainer mittels Javascript (task.js)
+    <div id="Main">
+        <div class="TaskDescription">
+            <h1>
+                Dako Workshop "Grundlagen Html & Javascript"
+            </h1>
+            <div>
+                <p>Aufgabe: Lege einen Container an, der sich durch Klick auf einen Button verschiebt.</p>
+                <div>
+                    <ol>
+                        <li>
+                            <span>Erzeuge einen div-Container mit der Id MoveContainer mit folgenden CSS-Eigenschaften (task.css):</span>
+                            <ul>
+                                <li>Breite (width): 50px</li>
+                                <li>Höhe (height): 50px</li>
+                                <li>Hintergrundfarbe (background-color): blau</li>
+                                <li>Rand (border): rot mit Breite von 3px</li>
+                                <li>Position: absolute</li>
+                                <li>Position top: 0</li>
+                                <li>Position left: 0</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Ändere die Hintergrundfarbe des Containers #MoveContainer mittels Javascript (task.js)
           auf grün und die Randfarbe auf gelb</span>
-      </li>
-      <li>
-        <span>Hänge mittels addEventListener einen click-Event an den Button #ToggleMoveContainerBtn, um den Container #MoveContainer ein- bzw. auszublenden.</span>
-        <ol>
-          <li>Hänge einen click-EventListener an den Button #ToggleMoveContainerBtn</li>
-          <li>Per Klick soll der Container #MoveContainer ein- bzw. ausgeblendet werden.</li>
-          <li>Bei Klick soll der Value des Buttons #ToggleMoveContainerBtn Anzeigen bzw. Verstecken sein - je nachdem, ob der Container #MoveContainer derzeit sichtbar ist.</li>
-        </ol>
-      </li>
-      <li>
-        <span>Erstelle einen zweiten Button #MoveContainerBtn, der per Klick den Container #MoveContainer nach rechts bewegt:</span>
-        <ol>
-          <li>Erstelle hinter dem Button #ToggleMoveContainerBtn einen zweiten Button #MoveContainerBtn</li>
-          <li>Bei jedem Klick bewegt sich der Container #MoveContainer um 100px weiter nach rechts.</li>
-          <li>Kann der Container sich nicht mehr nach rechts bewegen, bewegt er sich wieder zurück nach links, usw.</li>
-        </ol>
-      </li>
-      <li>
-        <span>Erstelle eine Textbox mit Id MoveContainerSteps (input) vor dem Button #MoveContainerBtn:</span>
-        <ol>
-          <li>Value soll 100 sein</li>
-          <li>Bei Klick auf den Button #MoveContainerBtn soll der Container #MoveContainer um die eingegebene
-            Länge bewegt werden.
-          </li>
-          <li>Wird der Wert in der Textbox #MoveContainerSteps komplett gelöscht und verliert die Box den Fokus (onchange-Event),
-            soll der Wert 100 eingetragen.</li>
-        </ol>
-      </li>
-    </ol>
-  </div>
-</div>
+                        </li>
+                        <li>
+                            <span>Hänge mittels addEventListener einen click-Event an den Button #ToggleMoveContainerBtn, um den Container #MoveContainer ein- bzw. auszublenden.</span>
+                            <ol>
+                                <li>Hänge einen click-EventListener an den Button #ToggleMoveContainerBtn</li>
+                                <li>Per Klick soll der Container #MoveContainer ein- bzw. ausgeblendet werden.</li>
+                                <li>Bei Klick soll der Value des Buttons #ToggleMoveContainerBtn Anzeigen bzw. Verstecken sein - je nachdem, ob der Container #MoveContainer derzeit sichtbar ist.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <span>Erstelle einen zweiten Button #MoveContainerBtn, der per Klick den Container #MoveContainer nach rechts bewegt:</span>
+                            <ol>
+                                <li>Erstelle hinter dem Button #ToggleMoveContainerBtn einen zweiten Button #MoveContainerBtn</li>
+                                <li>Bei jedem Klick bewegt sich der Container #MoveContainer um 100px weiter nach rechts.</li>
+                                <li>Kann der Container sich nicht mehr nach rechts bewegen, bewegt er sich wieder zurück nach links, usw.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <span>Erstelle eine Textbox mit Id MoveContainerSteps (input) vor dem Button #MoveContainerBtn:</span>
+                            <ol>
+                                <li>Value soll 100 sein</li>
+                                <li>Bei Klick auf den Button #MoveContainerBtn soll der Container #MoveContainer um die eingegebene Länge bewegt werden.
+                                </li>
+                                <li>Wird der Wert in der Textbox #MoveContainerSteps komplett gelöscht und verliert die Box den Fokus (onchange-Event), soll der Wert 100 eingetragen.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div id="moveContainer" class="Task">
+            <div>
+                <input id="ToggleMoveContainerBtn" type="button" value="Verstecken" />
+                <input type="button" value="Bewegen" id="move-container-btn">
+                <input type="text" name="" id="move-container-steps">
+                <!-- 4. Erstelle einen zweiten Button #MoveContainerBtn, der per Klick den Container #MoveContainer ein- bzw. ausblendet. -->
+            </div>
+            <div id="MoveContainerWrapper">
+                <!-- 1. Erstelle hier den Container #MoveContainer -->
+                <div class="" id="move-container"></div>
+            </div>
+            <script src="task.js"></script>
+        </div>
     </div>
-    <div id="moveContainer" class="Task">
-  <div>
-    <input id="ToggleMoveContainerBtn" type="button" value="Verstecken" />
-    <!-- 4. Erstelle einen zweiten Button #MoveContainerBtn, der per Klick den Container #MoveContainer ein- bzw. ausblendet. -->
-  </div>
-  <div id="MoveContainerWrapper">
-    <!-- 1. Erstelle hier den Container #MoveContainer -->
-  </div>
-  <script src="task.js"></script>
-    </div>
-  </div>
 </body>
+
 </html>
