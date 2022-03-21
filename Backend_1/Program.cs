@@ -1,30 +1,39 @@
-﻿for (int i = 0; i < 99; i++)
+﻿namespace Backend_1
 {
-    Console.WriteLine(evaluateTernary(i + 1));
-}
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 0; i < 99; i++)
+            {
+                Console.WriteLine(evaluateTernary(i + 1));
+            }
+        }
+        static string evaluate(int number)
+        {
+            if (number % 5 == 0 && number % 3 == 0)
+            {
+                return "FizzBuzz";
+            }
+            else if (number % 5 == 0)
+            {
+                return "Buzz";
+            }
+            else if (number % 3 == 0)
+            {
+                return "Fizz";
+            }
+            else
+            {
+                return $"{number}";
+            }
+        }
 
-static string evaluate(int number)
-{
-    if (number % 5 == 0 && number % 3 == 0)
-    {
-        return "FizzBuzz";
-    }
-    else if (number % 5 == 0)
-    {
-        return "Buzz";
-    }
-    else if (number % 3 == 0)
-    {
-        return "Fizz";
-    }
-    else
-    {
-        return $"{number}";
-    }
-}
+        static string evaluateTernary(int number)
+        {
+            string result = "";
+            return result = (number % 5 == 0 && number % 3 == 0) ? "FizzBuzz" : (number % 5 == 0) ? "Buzz" : (number % 3 == 0) ? "Fizz" : $"{number}";
+        }
 
-static string evaluateTernary(int number)
-{
-    string result = "";
-    return result = (number % 5 == 0 && number % 3 == 0) ? "FizzBuzz" : (number % 5 == 0) ? "Buzz" : (number % 3 == 0) ? "Fizz" : $"{number}";
+    }
 }
