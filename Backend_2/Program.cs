@@ -4,36 +4,36 @@
     {
         static void Main(string[] args)
         {
-            string[] shape_circle = new[] { "kreis", "circle" };
-            string[] shape_rectangle = new[] { "rechteck", "rectangle" };
-            string[] shape_triangle = new[] { "dreieck", "triangle" };
-            string[] string_quit = new[] { "quit", "close", "exit", "verlassen", "q" };
+            string[] shapeCircle = new[] { "kreis", "circle" };
+            string[] shapeRectangle = new[] { "rechteck", "rectangle" };
+            string[] shapeTriangle = new[] { "dreieck", "triangle" };
+            string[] stringQuit = new[] { "quit", "close", "exit", "verlassen", "q" };
 
             while (true)
             {
-                Console.WriteLine("-------------------------------------------------------------------------------------------------");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 Console.WriteLine("\"q\", \"quit\", \"close\", \"exit\", \"verlassen\" zum beenden!");
                 Console.WriteLine("Zulässige Eingaben:\n \"Dreieck\", \"Triangle\", \"Rechteck\", \"Rectangle\", \"Kreis\", \"Circle\"");
-                Console.WriteLine("-------------------------------------------------------------------------------------------------");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 Console.Write("Eingabe der Form: ");
                 string? eingabe = Console.ReadLine().ToLower();
 
-                if (shape_circle.Contains(eingabe))
+                if (shapeCircle.Contains(eingabe))
                 {
                     Console.WriteLine("Circle ausgewählt");
-                    calc_circle();
+                    calcCircle();
                 }
-                else if (shape_rectangle.Contains(eingabe))
+                else if (shapeRectangle.Contains(eingabe))
                 {
                     Console.WriteLine("Rectangle ausgewählt");
-                    calc_rectangle();
+                    calcRectangle();
                 }
-                else if (shape_triangle.Contains(eingabe))
+                else if (shapeTriangle.Contains(eingabe))
                 {
                     Console.WriteLine("Triangle ausgewählt");
-                    calc_Triangle();
+                    calcTriangle();
                 }
-                else if (string_quit.Contains(eingabe))
+                else if (stringQuit.Contains(eingabe))
                 {
                     break;
                 }
@@ -45,7 +45,7 @@
             }
 
         }
-        static void calc_circle()
+        static void calcCircle()
         {
             Console.WriteLine("Berechne Kreis...");
             Console.WriteLine();
@@ -72,7 +72,7 @@
             Console.WriteLine($"Flächeninhalt: {Math.Round(Math.PI * Math.Pow(radius, 2), 2)}cm^2 Umfang: {Math.Round((2 * Math.PI * radius), 2)}cm");
         }
 
-        static void calc_rectangle()
+        static void calcRectangle()
         {
             Console.WriteLine("Berechne Rechteck...");
             Console.WriteLine();
@@ -102,7 +102,7 @@
             Console.WriteLine($"Flächeninhalt: {Math.Round(site_a * site_b, 2)}cm^2 Umfang: {Math.Round(2 * (site_a + site_b), 2)}cm");
         }
 
-        static void calc_Triangle()
+        static void calcTriangle()
         {
             Console.WriteLine("Berechne Dreieck...");
             Console.WriteLine();
