@@ -2,21 +2,15 @@
 {
     internal class Program
     {
-        enum ai_level
-        {
-            SuperStupid,
-            Stupid,
-            Smart
-        }
         static void Main(string[] args)
         {
-            //playerGuessing();
-            //computerGuessing(ai_level.Smart);
             string? input;
             bool playAgain = true;
             while (playAgain)
             {
-                Console.Write("Spielmodi auswählen (1 für selber Raten, 2 für Computer auf einfach, 3 für Computer auf normal, 4 für Computer auf clever): ");
+                Console.WriteLine("Spielmodi auswählen: 1 für selber Raten, 2 für Computer auf einfach, 3 für Computer auf normal, 4 für Computer auf clever ");
+                Console.WriteLine("\"Q\", \"Quit\", \"Close\", \"Exit\" zum beenden!");
+                Console.Write("Deine Auswahl: ");
                 input = Console.ReadLine();
 
                 switch (input.ToLower())
@@ -25,13 +19,13 @@
                         playerGuessing();
                         break;
                     case "2":
-                        computerGuessing(ai_level.SuperStupid);
+                        computerSuperStupid();
                         break;
                     case "3":
-                        computerGuessing(ai_level.Stupid);
+                        computerStupid();
                         break;
                     case "4":
-                        computerGuessing(ai_level.Smart);
+                        computerSmart();
                         break;
                     case "q":
                     case "quit":
@@ -40,10 +34,9 @@
                         playAgain = false;
                         break;
                     default:
-                        Console.WriteLine("Keine gültige Eingabe");
+                        Console.WriteLine("Keine gültige Eingabe, nur Zahlen 1-4 sind ok!");
                         break;
                 }
-
             }
         }
 
@@ -94,23 +87,6 @@
             }
             Console.WriteLine($"Anzahl der gebrauchten Versuche: {counter}");
         }
-
-        static void computerGuessing(ai_level level)
-        {
-            switch (level)
-            {
-                case ai_level.SuperStupid:
-                    computerSuperStupid();
-                    break;
-                case ai_level.Stupid:
-                    computerStupid();
-                    break;
-                case ai_level.Smart:
-                    computerSmart();
-                    break;
-            }
-        }
-
         static void computerSuperStupid()
         {
             //only random guesses, no real logic
@@ -298,6 +274,7 @@
             {
                 int check = upperLimit - lowerLimit;
                 int guess;
+#warning look if the check for the first guess needs to have an extra implementation
                 if (counter == 0)
                 {
                     if (upperLimit - lowerLimit % 2 == 0)
