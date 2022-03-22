@@ -4,24 +4,24 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter number (empty to exit): ");
+            Console.Write("Zahl zum Umrechnen  (leer lassen zum verlassen): ");
             string? number = Console.ReadLine();
 
             while (!string.IsNullOrEmpty(number))
             {
-
-                Console.Write("    Enter number base (2-36): ");
+                Console.Write("    Basis der Zahl (2-36): ");
                 int numberBase = int.Parse(Console.ReadLine());
 
-                Console.Write("Enter new number base (2-36): ");
+                Console.Write("Gewünschte Basis(2-36): ");
                 int newBase = int.Parse(Console.ReadLine());
 
-                string newNumber = ConvertNumber(number, numberBase, newBase);
+                Console.WriteLine($"{number} => Binär: {ConvertNumber(number, numberBase, 2)}");
+                Console.WriteLine($"{number} => Dezimal: {ConvertNumber(number, numberBase, 10)}");
+                Console.WriteLine($"{number} => Hexadezimal: {ConvertNumber(number, numberBase, 16)}");
+                Console.WriteLine($"{number} => Gewünschte Basis {newBase}: {ConvertNumber(number, numberBase, newBase)}");
 
-                Console.WriteLine("{0} ({1}) = {2} ({3})",
-                                  number, numberBase, newNumber, newBase);
-
-                Console.Write("Enter number (empty to exit): ");
+                Console.WriteLine();
+                Console.Write("Zahl zum Umrechnen  (leer lassen zum verlassen): ");
                 number = Console.ReadLine();
             }
 
