@@ -23,7 +23,7 @@
 
             for (int i = 0; i < arrayLength; i++)
             {
-                Console.WriteLine($"Item {i} | {unsortedList[i], 4} | {bubbleSortList[i], 4} | {insertionSortList[i], 4}");
+                Console.WriteLine($"Item {i} | {unsortedList[i],4} | {bubbleSortList[i],4} | {insertionSortList[i],4}");
             }
         }
 
@@ -113,7 +113,7 @@
                 }
                 arrayCopy[j + 1] = key;
             }
-        return arrayCopy;
+            return arrayCopy;
         }
     }
 }
