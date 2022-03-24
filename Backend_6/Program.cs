@@ -4,6 +4,31 @@
     {
         public static void Main(string[] args)
         {
+            Console.Write("\"1\" für 1 Spieler, \"2\" für 2 Spieler: ");
+            string? input = Console.ReadLine();
+            while (!string.IsNullOrEmpty(input))
+            {
+                switch (input.ToLower())
+                {
+                    case "1":
+                        StartGameLoop(true);
+                        break;
+                    case "2":
+                        StartGameLoop(false);
+                        break;
+                    default:
+                        Console.WriteLine("Keine gültige Eingabe!\n");
+                        break;
+                }
+
+                Console.Write("\"1\" für 1 Spieler, \"2\" für 2 Spieler: ");
+                input = Console.ReadLine();
+            }
+        }
+
+        public static void StartGameLoop(bool againstPc)
+        {
+            bool againstAi = againstPc;
             bool gameOver = false;
             char[,] field = new char[3, 3];
             int turn = 1;
@@ -11,7 +36,9 @@
 
             while (!gameOver)
             {
-                field = PlayerTurn(field, turn);
+                field = PlayerTurn(field, turn, againstAi);
+                Console.Clear();
+                Console.Write("Aktuelles Feld:");
                 PrintField(field);
                 Console.WriteLine();
                 winner = CheckWin(field, turn);
@@ -20,54 +47,83 @@
             }
 
             Console.WriteLine();
-            Console.WriteLine($"Gewonnen hat {winner}");
+            Console.WriteLine($"Gewonnen hat {winner}\n");
         }
 
-        public static char[,] PlayerTurn(char[,] currentField, int currentTurn)
+        public static char[,] PlayerTurn(char[,] currentField, int currentTurn, bool againstAi)
         {
             char playerSymbol = (currentTurn % 2 != 0) ? 'X' : 'O';
 
             bool wrongInput = false;
             int inputRow = 0;
             int inputColumn = 0;
-            do
+            if (againstAi && playerSymbol == 'O')
             {
-                wrongInput = false;
-                try
+                 return AiTurn(currentField);
+            }
+            else
+            {
+                do
                 {
-                    for (int i = 1; i < 4; i++)
+                    wrongInput = false;
+                    try
                     {
-                        Console.WriteLine($"{i,-4}MMM");
+                        for (int i = 1; i < 4; i++)
+                        {
+                            Console.WriteLine($"{i,-1}MMM");
+                        }
+
+                        Console.Write("Row (1 - 3): ");
+                        inputRow = Convert.ToInt16(Console.ReadLine()) - 1;
+
+                        Console.WriteLine($"\n{1}{2}{3}\nMMM\nMMM\nMMM");
+
+                        Console.Write("Column (1 - 3): ");
+                        inputColumn = Convert.ToInt16(Console.ReadLine()) - 1;
+
+                        if (inputRow > 2 || inputRow < 0 || inputColumn > 2 || inputColumn < 0)
+                        {
+                            throw new ArgumentException("Eine der Eingabe ist nicht im gültigen Bereich von 1, 2, 3!");
+                        }
+
+                        if (currentField[inputRow, inputColumn] != default(char))
+                        {
+                            throw new ArgumentException("Das Feld ist schon belegt!");
+                        }
                     }
-
-                    Console.Write("Row (1 - 3): ");
-                    inputRow = Convert.ToInt16(Console.ReadLine()) - 1;
-
-                    Console.WriteLine($"{1}{2}{3}\n\n\nMMM\nMMM\nMMM");
-
-                    Console.Write("Column (1 - 3): ");
-                    inputColumn = Convert.ToInt16(Console.ReadLine()) - 1;
-
-                    if (inputRow > 2 || inputRow < 0 || inputColumn > 2 || inputColumn < 0)
+                    catch (Exception ex)
                     {
-                        throw new ArgumentException("Eine der Eingabe ist nicht im gültigen Bereich von 1, 2, 3!");
-                    }
-
-                    if (currentField[inputRow, inputColumn] != default(char))
-                    {
-                        throw new ArgumentException("Das Feld ist schon belegt!");
+                        wrongInput = true;
+                        Console.WriteLine($"Fehler: {ex.GetType()} | {ex.Message}");
+                        Console.WriteLine();
                     }
                 }
-                catch (Exception ex)
+                while (wrongInput);
+                currentField[inputRow, inputColumn] = playerSymbol;
+            }
+
+            return currentField;
+        }
+
+        public static char[,] AiTurn(char[,] currentField)
+        {
+            var availableSpaces = new List<Tuple<int, int>>();
+            var rand = new Random();
+            var guess = new Tuple<int, int>(0, 0);
+
+            for (int row = 0; row < 3; row++)
+            {
+                for (int column = 0; column < 3; column++)
                 {
-                    wrongInput = true;
-                    Console.WriteLine($"Fehler: {ex.GetType()} | {ex.Message}");
-                    Console.WriteLine();
+                    if (currentField[row, column] == default(char))
+                    {
+                        availableSpaces.Add(new Tuple<int, int>(row, column));
+                    }
                 }
             }
-            while (wrongInput);
 
-            currentField[inputRow, inputColumn] = playerSymbol;
+            guess = availableSpaces[rand.Next(0, availableSpaces.Count)];
+            currentField[guess.Item1, guess.Item2] = 'O';
 
             return currentField;
         }
@@ -120,7 +176,7 @@
                 {
                     if (currentField[i, j] == '\0')
                     {
-                        Console.Write('M');
+                        Console.Write(' ');
                     }
                     else
                     {
