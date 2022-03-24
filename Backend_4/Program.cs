@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.Write("Zahl zum Umrechnen  (leer lassen zum verlassen): ");
             string? number = Console.ReadLine();
@@ -24,91 +24,96 @@
                 Console.Write("Zahl zum Umrechnen  (leer lassen zum verlassen): ");
                 number = Console.ReadLine();
             }
+        }
 
-            static char intToChar(int value)
+        public static char IntToChar(int value)
+        {
+            /*
+            Ascii tabelle: char => int
+            '0' => 48
+            'A' => 65
+            'Z' => 90
+            my number needs to be between 65 and 90 to convert number > 9 to a character
+            Example:
+             */
+            char result;
+
+            if (value < 10)
             {
-                /*
-                Ascii tabelle: char => int
-                '0' => 48
-                'A' => 65
-                'Z' => 90
-                my number needs to be between 65 and 90 to convert number > 9 to a character
-                Example: 
-                 */
-                char result;
-
-                if (value < 10)
-                {
-                    //look up int vlaue of '0' add the number and then look up what the char value of the sum is
-                    //alternative: result = (char)('0' + value);
-                    result = (char)(48 + value);
-                }
-                else
-                {
-                    //alternative: result = (char)('A' - 10 + value); or = (char)('7' + value);
-                    //cant start with (int)'A' because value will always be atleast 10, but if it is 10 then i dont want to add it to (int)'A' becasue that would give 'K' or 75  and not 'A' or 65
-                    // so i either start with 55 (10 less then (int)'A') or i subtract 10
-                    result = (char)(55 + value);
-                }
-
-                return result;
+                // look up int vlaue of '0' add the number and then look up what the char value of the sum is
+                // alternative: result = (char)('0' + value);
+                result = (char)(48 + value);
             }
-            static int charToInt(char digit)
+            else
             {
-                int result;
-                if (digit >= '0' && digit <= '9')
-                {
-                    //calc the Ascii code difference of the number and ascii code for '0'
-                    result = digit - '0';
-                }
-                else
-                {
-                    result = digit - 55;
-                }
-                return result;
+                // alternative: result = (char)('A' - 10 + value); or = (char)('7' + value);
+                // cant start with (int)'A' because value will always be atleast 10, but if it is 10 then i dont want to add it to (int)'A' becasue that would give 'K' or 75  and not 'A' or 65
+                // so i either start with 55 (10 less then (int)'A') or i subtract 10
+                result = (char)(55 + value);
             }
 
-            static string ConvertNumber(string number, int numberBase, int newBase)
-            {
-                string newNumber = "";
-                while (number != "0")
-                {
-                    int reminder = 0;
-                    number = divide(number, numberBase, newBase, out reminder);
-                    var newDigit = intToChar(reminder);
-                    newNumber = newDigit + newNumber;
-                }
+            return result;
+        }
 
-                if (newNumber == "")
-                {
-                    newNumber = "0";
-                }
-                return newNumber;
+        public static int CharToInt(char digit)
+        {
+            int result;
+            if (digit >= '0' && digit <= '9')
+            {
+                // calc the Ascii code difference of the number and ascii code for '0'
+                result = digit - '0';
+            }
+            else
+            {
+                result = digit - 55;
             }
 
-            static string divide(string number, int numberBase, int divisor, out int remainder)
-            {
-                remainder = 0;
-                var result = "";
+            return result;
+        }
 
-                for (int i = 0; i < number.Length; i++)
-                {
-                    var digitValue = charToInt(number[i]);
-                    remainder = numberBase * remainder + digitValue;
-                    var newDigitValue = remainder / divisor;
-                    remainder = remainder % divisor;
-                    if (newDigitValue > 0 || result != "0")
-                    {
-                        var newDigit = intToChar(newDigitValue);
-                        result = result + newDigit;
-                    }
-                    if (result == "")
-                    {
-                        result = "0";
-                    }
-                }
-                return result;
+        public static string ConvertNumber(string number, int numberBase, int newBase)
+        {
+            string newNumber = string.Empty;
+            while (number != "0")
+            {
+                int reminder = 0;
+                number = Divide(number, numberBase, newBase, out reminder);
+                var newDigit = IntToChar(reminder);
+                newNumber = newDigit + newNumber;
             }
+
+            if (newNumber == string.Empty)
+            {
+                newNumber = "0";
+            }
+
+            return newNumber;
+        }
+
+        public static string Divide(string number, int numberBase, int divisor, out int remainder)
+        {
+            remainder = 0;
+            var result = string.Empty;
+
+            for (int i = 0; i < number.Length; i++)
+            {
+                var digitValue = CharToInt(number[i]);
+                remainder = (numberBase * remainder) + digitValue;
+                var newDigitValue = remainder / divisor;
+                remainder = remainder % divisor;
+                if (newDigitValue > 0 || result != "0")
+                {
+                    var newDigit = IntToChar(newDigitValue);
+                    result = result + newDigit;
+                }
+
+                if (result == string.Empty)
+                {
+                    result = "0";
+                }
+            }
+
+            return result;
         }
     }
 }

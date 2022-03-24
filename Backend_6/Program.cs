@@ -2,28 +2,31 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             bool gameOver = false;
             char[,] field = new char[3, 3];
             int turn = 1;
+            char winner = default(char);
 
             while (!gameOver)
             {
-                field = playerTurn(field, turn);
-                printField(field);
+                field = PlayerTurn(field, turn);
+                PrintField(field);
                 Console.WriteLine();
-                gameOver = checkWin(field, turn);
+                winner = CheckWin(field, turn);
+                gameOver = (winner != default(char)) ? true : false;
                 turn++;
             }
+
+            Console.WriteLine();
+            Console.WriteLine($"Gewonnen hat {winner}");
         }
 
-        static char[,] playerTurn(char[,] currentField, int currentTurn)
+        public static char[,] PlayerTurn(char[,] currentField, int currentTurn)
         {
-            //get player symbol
-            char playerSymbol = (currentTurn % 2 != 0)? 'X': 'O';            
+            char playerSymbol = (currentTurn % 2 != 0) ? 'X' : 'O';
 
-            //get player input for field
             bool wrongInput = false;
             int inputRow = 0;
             int inputColumn = 0;
@@ -32,18 +35,24 @@
                 wrongInput = false;
                 try
                 {
-                    Console.Write("In welche Reihe (0-2): ");
-                    inputRow = Convert.ToInt16(Console.ReadLine());
-                    Console.Write("In welche Spalte (0-2): ");
-                    inputColumn = Convert.ToInt16(Console.ReadLine());
+                    for (int i = 1; i < 4; i++)
+                    {
+                        Console.WriteLine($"{i,-4}MMM");
+                    }
 
-                    //keine zahl von 0 bis 2
-                    //feld belegt
+                    Console.Write("Row (1 - 3): ");
+                    inputRow = Convert.ToInt16(Console.ReadLine()) - 1;
+
+                    Console.WriteLine($"{1}{2}{3}\n\n\nMMM\nMMM\nMMM");
+
+                    Console.Write("Column (1 - 3): ");
+                    inputColumn = Convert.ToInt16(Console.ReadLine()) - 1;
 
                     if (inputRow > 2 || inputRow < 0 || inputColumn > 2 || inputColumn < 0)
                     {
-                        throw new ArgumentException("Eine der Eingabe ist nicht im gültigen Bereich von 0,1,2!");
+                        throw new ArgumentException("Eine der Eingabe ist nicht im gültigen Bereich von 1, 2, 3!");
                     }
+
                     if (currentField[inputRow, inputColumn] != default(char))
                     {
                         throw new ArgumentException("Das Feld ist schon belegt!");
@@ -55,38 +64,54 @@
                     Console.WriteLine($"Fehler: {ex.GetType()} | {ex.Message}");
                     Console.WriteLine();
                 }
+            }
+            while (wrongInput);
 
-            } while (wrongInput);
-
-            //change field
             currentField[inputRow, inputColumn] = playerSymbol;
 
             return currentField;
         }
-        static bool checkWin(char[,] currentField, int currentTurn)
+
+        public static char CheckWin(char[,] currentField, int currentTurn)
         {
+            char winner = default(char);
 
-            //check horizontal
-            checkEqual(currentField[0, 0], currentField[0, 1], currentField[0, 2]);
-            checkEqual(currentField[1, 0], currentField[1, 1], currentField[1, 2]);
-            checkEqual(currentField[2, 0], currentField[2, 1], currentField[2, 2]);
+            for (int i = 0; i < 3; i++)
+            {
+                winner = CheckEqual(currentField[i, 0], currentField[i, 1], currentField[i, 2]);
+                if (winner != default(char))
+                {
+                    break;
+                }
 
-            //check vertical
+                winner = CheckEqual(currentField[0, i], currentField[1, i], currentField[2, i]);
+                if (winner != default(char))
+                {
+                    break;
+                }
 
-            checkEqual(currentField[0, 0], currentField[1, 0], currentField[2, 0]);
-            checkEqual(currentField[0, 1], currentField[1, 1], currentField[2, 1]);
-            checkEqual(currentField[0, 2], currentField[1, 2], currentField[2, 2]);
+                winner = CheckEqual(currentField[0, 0], currentField[1, 1], currentField[2, 2]);
+                if (winner != default(char))
+                {
+                    break;
+                }
 
-            //check crossing
-            checkEqual(currentField[0, 0], currentField[1, 1], currentField[2, 2]);
-            checkEqual(currentField[0, 2], currentField[1, 1], currentField[2, 0]);
-            return false;
+                winner = CheckEqual(currentField[0, 2], currentField[1, 1], currentField[2, 0]);
+                if (winner != default(char))
+                {
+                    break;
+                }
+            }
+
+            return winner;
         }
-        static bool checkEqual(char a, char b, char c)
+
+        public static char CheckEqual(char a, char b, char c)
         {
-            return (a == b && b == c);
+            return ((a == b && b == c) && a != default(char)) ? a : default(char);
         }
-        static void printField(char[,] currentField)
+
+        public static void PrintField(char[,] currentField)
         {
             Console.WriteLine();
             for (int i = 0; i < 3; i++)
@@ -102,6 +127,7 @@
                         Console.Write(currentField[i, j]);
                     }
                 }
+
                 Console.WriteLine();
             }
         }

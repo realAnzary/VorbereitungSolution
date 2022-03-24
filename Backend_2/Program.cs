@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string[] shapeCircle = new[] { "kreis", "circle" };
             string[] shapeRectangle = new[] { "rechteck", "rectangle" };
@@ -21,17 +21,17 @@
                 if (shapeCircle.Contains(eingabe))
                 {
                     Console.WriteLine("Circle ausgewählt");
-                    calcCircle();
+                    CalcCircle();
                 }
                 else if (shapeRectangle.Contains(eingabe))
                 {
                     Console.WriteLine("Rectangle ausgewählt");
-                    calcRectangle();
+                    CalcRectangle();
                 }
                 else if (shapeTriangle.Contains(eingabe))
                 {
                     Console.WriteLine("Triangle ausgewählt");
-                    calcTriangle();
+                    CalcTriangle();
                 }
                 else if (stringQuit.Contains(eingabe))
                 {
@@ -41,11 +41,12 @@
                 {
                     Console.WriteLine("Keine richtige Eingabe");
                 }
+
                 Console.WriteLine();
             }
-
         }
-        static void calcCircle()
+
+        public static void CalcCircle()
         {
             Console.WriteLine("Berechne Kreis...");
             Console.WriteLine();
@@ -65,14 +66,15 @@
                     Console.WriteLine($"Error: {ex.GetType()} | {ex.Message}");
                     wrong_input = true;
                 }
-            } while (wrong_input);
+            }
+            while (wrong_input);
 
             Console.WriteLine($"Gewählter Radius: {radius}");
             Console.WriteLine();
-            Console.WriteLine($"Flächeninhalt: {Math.Round(Math.PI * Math.Pow(radius, 2), 2)}cm^2 Umfang: {Math.Round((2 * Math.PI * radius), 2)}cm");
+            Console.WriteLine($"Flächeninhalt: {Math.Round(Math.PI * Math.Pow(radius, 2), 2)}cm^2 Umfang: {Math.Round(2 * Math.PI * radius, 2)}cm");
         }
 
-        static void calcRectangle()
+        public static void CalcRectangle()
         {
             Console.WriteLine("Berechne Rechteck...");
             Console.WriteLine();
@@ -95,14 +97,15 @@
                     Console.WriteLine($"Error: {ex.GetType()} | {ex.Message}");
                     wrong_input = true;
                 }
-            } while (wrong_input);
+            }
+            while (wrong_input);
 
             Console.WriteLine($"Gewählte Seitenlänge A: {site_a}cm B: {site_b}cm");
             Console.WriteLine();
             Console.WriteLine($"Flächeninhalt: {Math.Round(site_a * site_b, 2)}cm^2 Umfang: {Math.Round(2 * (site_a + site_b), 2)}cm");
         }
 
-        static void calcTriangle()
+        public static void CalcTriangle()
         {
             Console.WriteLine("Berechne Dreieck...");
             Console.WriteLine();
@@ -128,10 +131,11 @@
                     Console.WriteLine($"Error: {ex.GetType()} | {ex.Message}");
                     wrong_input = true;
                 }
-            } while (wrong_input);
+            }
+            while (wrong_input);
             Console.WriteLine($"Gewählte Seitenlänge A: {site_a}cm B: {site_b}cm C: {site_c}cm");
             Console.WriteLine();
-            Console.WriteLine($"Flächeninhalt: {Math.Round((site_a * site_b)) * .5,2}cm^2 Umfang: {Math.Round(site_a + site_b + site_c, 2)}cm");
+            Console.WriteLine($"Flächeninhalt: {Math.Round(site_a * site_b * .5, 2)}cm^2 Umfang: {Math.Round(site_a + site_b + site_c, 2)}cm");
         }
     }
 }

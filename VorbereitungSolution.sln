@@ -9,6 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{297A
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{870C5C81-C254-4569-85BA-770999B0FB72}"
+	ProjectSection(SolutionItems) = preProject
+		StyleCop.txt = StyleCop.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend_1", "Backend_1\Backend_1.csproj", "{A3500CA4-8EC9-4056-8188-C9A2587ECFFE}"
 EndProject
@@ -20,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend_4", "Backend_4\Back
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend_5", "Backend_5\Backend_5.csproj", "{A8EBC03E-D927-4A4D-856F-3036C6D9D24A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend_6", "Backend_6\Backend_6.csproj", "{DFB6DC55-0A4C-4310-A468-51AFC346B24E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend_6", "Backend_6\Backend_6.csproj", "{DFB6DC55-0A4C-4310-A468-51AFC346B24E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

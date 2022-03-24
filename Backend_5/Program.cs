@@ -2,15 +2,15 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string path = @"d:\randomNumbers.txt";
             int arrayLength = 10;
 
-            createFile(path, arrayLength, -50, 50);
-            int[] unsortedList = readFile(path, arrayLength);
-            int[] bubbleSortList = bubbleSort(unsortedList);
-            int[] insertionSortList = insertionSort(unsortedList);
+            CreateFile(path, arrayLength, -50, 50);
+            int[] unsortedList = ReadFile(path, arrayLength);
+            int[] bubbleSortList = BubbleSort(unsortedList);
+            int[] insertionSortList = InsertionSort(unsortedList);
             /*
             int[] unsortedList = createList(10, 1, 100);
             int[] sortedList = bubbleSort(unsortedList);
@@ -27,7 +27,7 @@
             }
         }
 
-        static int[] createList(int length, int lowerLimit, int upperLimit)
+        public static int[] CreateList(int length, int lowerLimit, int upperLimit)
         {
             Random rand = new Random();
             int[] array = new int[length];
@@ -35,11 +35,13 @@
             {
                 array[i] = rand.Next(lowerLimit, upperLimit + 1);
             }
+
             return array;
         }
-        static void createFile(string path, int length, int lowerLimit, int upperLimit)
+
+        public static void CreateFile(string path, int length, int lowerLimit, int upperLimit)
         {
-            Random rand = new();
+            Random rand = new Random();
 
             using (StreamWriter sw = File.CreateText(path))
             {
@@ -50,13 +52,13 @@
             }
         }
 
-        static int[] readFile(string path, int length)
+        public static int[] ReadFile(string path, int length)
         {
             int count = 0;
             int[] numberList = new int[length];
             using (StreamReader sr = File.OpenText(path))
             {
-                string s;
+                string? s;
                 while ((s = sr.ReadLine()) != null)
                 {
                     numberList[count] = Convert.ToInt32(s);
@@ -66,7 +68,8 @@
 
             return numberList;
         }
-        static int[] bubbleSort(int[] inputArray)
+
+        public static int[] BubbleSort(int[] inputArray)
         {
             int[] arrayCopy = (int[])inputArray.Clone();
             bool madeSwitch = false;
@@ -90,11 +93,12 @@
                         }
                     }
                 }
-            } while (madeSwitch);
+            }
+            while (madeSwitch);
             return arrayCopy;
         }
 
-        static int[] insertionSort(int[] inputArray)
+        public static int[] InsertionSort(int[] inputArray)
         {
             int[] arrayCopy = (int[])inputArray.Clone();
 
@@ -111,8 +115,10 @@
                     arrayCopy[j + 1] = arrayCopy[j];
                     j = j - 1;
                 }
+
                 arrayCopy[j + 1] = key;
             }
+
             return arrayCopy;
         }
     }

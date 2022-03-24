@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string? input;
             bool playAgain = true;
@@ -16,16 +16,16 @@
                 switch (input.ToLower())
                 {
                     case "1":
-                        playerGuessing();
+                        PlayerGuessing();
                         break;
                     case "2":
-                        computerSuperStupid();
+                        ComputerSuperStupid();
                         break;
                     case "3":
-                        computerStupid();
+                        ComputerStupid();
                         break;
                     case "4":
-                        computerSmart();
+                        ComputerSmart();
                         break;
                     case "q":
                     case "quit":
@@ -40,10 +40,10 @@
             }
         }
 
-        static void playerGuessing()
+        public static void PlayerGuessing()
         {
             int counter = 0;
-            Random rand = new();
+            Random rand = new Random();
             int selectedNumber = (int)rand.NextInt64(1, 101);
 
             while (true)
@@ -71,9 +71,8 @@
                         inputNotValid = true;
                         Console.WriteLine("----------------------------------------------------------------------------------------------------");
                     }
-
-                } while (inputNotValid);
-
+                }
+                while (inputNotValid);
 
                 counter++;
                 if (Convert.ToInt32(input) == selectedNumber)
@@ -81,15 +80,18 @@
                     Console.WriteLine($"Korrekt geraten, die Zahl war {selectedNumber}");
                     break;
                 }
+
                 string clue = (Convert.ToInt16(input) > selectedNumber) ? "Zahl ist kleiner als deine Eingabe" : "Zahl ist größer als Eingabe";
                 Console.WriteLine(clue);
                 Console.WriteLine("----------------------------------------------------------------------------------------------------");
             }
+
             Console.WriteLine($"Anzahl der gebrauchten Versuche: {counter}");
         }
-        static void computerSuperStupid()
+
+        public static void ComputerSuperStupid()
         {
-            //only random guesses, no real logic
+            // only random guesses, no real logic
             int counter = 0;
             bool inputNotValid = false;
             string? input;
@@ -114,12 +116,11 @@
                     inputNotValid = true;
                     Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 }
+            }
+            while (inputNotValid);
 
-            } while (inputNotValid);
-
-            //start guessing
+            // start guessing
             Random rand = new Random();
-
 
             while (true)
             {
@@ -133,7 +134,7 @@
                 }
                 else
                 {
-                    //clue from user
+                    // clue from user
                     string? clue;
                     bool validClue = false;
                     do
@@ -148,18 +149,18 @@
                         {
                             Console.WriteLine("Tipp ist nicht richtig, bitte korrigieren!");
                         }
-
-                    } while (!validClue);
+                    }
+                    while (!validClue);
                     Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 }
             }
+
             Console.WriteLine($"Anzahl der vom Computer gebrauchten Versuche: {counter}");
-
-
         }
-        static void computerStupid()
+
+        public static void ComputerStupid()
         {
-            //randomly guessing but reacts according to the player feedback
+            // randomly guessing but reacts according to the player feedback
             int counter = 0;
             bool inputNotValid = false;
             string? input;
@@ -184,14 +185,13 @@
                     inputNotValid = true;
                     Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 }
+            }
+            while (inputNotValid);
 
-            } while (inputNotValid);
-
-            //start guessing
+            // start guessing
             Random rand = new Random();
             int upperLimit = 101;
             int lowerLimit = 1;
-
 
             while (true)
             {
@@ -205,7 +205,7 @@
                 }
                 else
                 {
-                    //clue from user
+                    // clue from user
                     string? clue;
                     bool validClue = false;
                     do
@@ -220,10 +220,10 @@
                         {
                             Console.WriteLine("Tipp ist nicht richtig, bitte korrigieren!");
                         }
+                    }
+                    while (!validClue);
 
-                    } while (!validClue);
-
-                    //interpret clue
+                    // interpret clue
                     if (clue == "kleiner")
                     {
                         upperLimit = guess;
@@ -232,14 +232,17 @@
                     {
                         lowerLimit = guess + 1;
                     }
+
                     Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 }
             }
+
             Console.WriteLine($"Anzahl der vom Computer gebrauchten Versuche: {counter}");
         }
-        static void computerSmart()
+
+        public static void ComputerSmart()
         {
-            //divide and conquer principle, seems like the most consistent approach to this
+            // divide and conquer principle, seems like the most consistent approach to this
             int counter = 0;
             bool inputNotValid = false;
             string? input;
@@ -264,8 +267,9 @@
                     inputNotValid = true;
                     Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 }
+            }
+            while (inputNotValid);
 
-            } while (inputNotValid);
             // start guessing
             Random rand = new Random();
             int upperLimit = 101;
@@ -277,7 +281,7 @@
 #warning look if the check for the first guess needs to have an extra implementation
                 if (counter == 0)
                 {
-                    if (upperLimit - lowerLimit % 2 == 0)
+                    if (upperLimit - (lowerLimit % 2) == 0)
                     {
                         guess = (upperLimit - lowerLimit) / 2;
                         Console.WriteLine($"gerade | {guess}");
@@ -293,6 +297,7 @@
                     int difference = upperLimit - lowerLimit;
                     guess = lowerLimit + (difference / 2);
                 }
+
                 counter++;
                 Console.WriteLine($"Der Computer tippt auf: {guess}");
                 if (guess == Convert.ToInt16(input))
@@ -302,7 +307,7 @@
                 }
                 else
                 {
-                    //clue from user
+                    // clue from user
                     string? clue;
                     bool validClue = false;
                     do
@@ -317,10 +322,10 @@
                         {
                             Console.WriteLine("Tipp ist nicht richtig, bitte korrigieren!");
                         }
+                    }
+                    while (!validClue);
 
-                    } while (!validClue);
-
-                    //interpret clue
+                    // interpret clue
                     if (clue == "kleiner")
                     {
                         upperLimit = guess;
@@ -329,9 +334,11 @@
                     {
                         lowerLimit = guess + 1;
                     }
+
                     Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 }
             }
+
             Console.WriteLine($"Anzahl der vom Computer gebrauchten Versuche: {counter}");
         }
     }
