@@ -29,8 +29,8 @@
         public static void StartGameLoop(bool againstPc)
         {
             bool againstAi = againstPc;
-            bool gameOver = false;
             char[,] field = new char[3, 3];
+            bool gameOver = false;
             int turn = 1;
             char winner = default(char);
 
@@ -59,7 +59,7 @@
             int inputColumn = 0;
             if (againstAi && playerSymbol == 'O')
             {
-                 return AiTurn(currentField);
+                return AiTurn(currentField);
             }
             else
             {
@@ -108,8 +108,8 @@
         public static char[,] AiTurn(char[,] currentField)
         {
             var availableSpaces = new List<Tuple<int, int>>();
-            var rand = new Random();
             var guess = new Tuple<int, int>(0, 0);
+            var rand = new Random();
 
             for (int row = 0; row < 3; row++)
             {
@@ -122,7 +122,7 @@
                 }
             }
 
-            guess = availableSpaces[rand.Next(0, availableSpaces.Count)];
+            guess = availableSpaces[rand.Next(0, availableSpaces.Count + 1)];
             currentField[guess.Item1, guess.Item2] = 'O';
 
             return currentField;
@@ -146,16 +146,19 @@
                     break;
                 }
 
-                winner = CheckEqual(currentField[0, 0], currentField[1, 1], currentField[2, 2]);
-                if (winner != default(char))
+                if (i == 0)
                 {
-                    break;
-                }
+                    winner = CheckEqual(currentField[0, 0], currentField[1, 1], currentField[2, 2]);
+                    if (winner != default(char))
+                    {
+                        break;
+                    }
 
-                winner = CheckEqual(currentField[0, 2], currentField[1, 1], currentField[2, 0]);
-                if (winner != default(char))
-                {
-                    break;
+                    winner = CheckEqual(currentField[0, 2], currentField[1, 1], currentField[2, 0]);
+                    if (winner != default(char))
+                    {
+                        break;
+                    }
                 }
             }
 
