@@ -1,88 +1,91 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>Workshop 1</title>
     <link rel="stylesheet" type="text/css" href="../main.css">
-  <link href="task.css" rel="stylesheet" />
+    <link href="task.css" rel="stylesheet" />
 </head>
+
 <body>
-  <div id="Main">
-    <div class="TaskDescription">
-      <h1>
-  Elemente erstellen und verschieben
-</h1>
-      <div>
-  <p>Aufgabe: Erstelle eine Liste und verschiebe die Einträge</p>
-  <div>
-    <ol>
-      <li>
-        <span>Hänge an dem Button #AddAnimalBtn ein click-EventListener mit folgenden Ausführungen (task.js):</span>
-        <ul>
-          <li>Im Div #Fence1 ein neues div-Element mit der Klasse Animal anlegen</li>
-          <li>Der Container .Animal enthält ein span-Element mit dem Text aus der Textbox #AddAnimal</li>
-          <li>Verhindere ein Hinzufügen, wenn es bereits ein Element .Animal mit gleichem Namen gibt.</li>
-        </ul>
-      </li>
-      <li>
-        <span>Style das Element .Animal (task.css):</span>
-        <ol>
-          <li>Innenabstand: 5px</li>
-          <li>Außenabstand: 3px</li>
-          <li>Schriftfarbe: darkgreen</li>
-          <li>Hintergrundfarbe: hellgrau</li>
-        </ol>
-      </li>
-      <li>
-        <span>
+    <div id="Main">
+        <div class="TaskDescription">
+            <h1>
+                Elemente erstellen und verschieben
+            </h1>
+            <div>
+                <p>Aufgabe: Erstelle eine Liste und verschiebe die Einträge</p>
+                <div>
+                    <ol>
+                        <li>
+                            <span>Hänge an dem Button #AddAnimalBtn ein click-EventListener mit folgenden Ausführungen (task.js):</span>
+                            <ul>
+                                <li>Im Div #Fence1 ein neues div-Element mit der Klasse Animal anlegen</li>
+                                <li>Der Container .Animal enthält ein span-Element mit dem Text aus der Textbox #AddAnimal</li>
+                                <li>Verhindere ein Hinzufügen, wenn es bereits ein Element .Animal mit gleichem Namen gibt.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Style das Element .Animal (task.css):</span>
+                            <ol>
+                                <li>Innenabstand: 5px</li>
+                                <li>Außenabstand: 3px</li>
+                                <li>Schriftfarbe: darkgreen</li>
+                                <li>Hintergrundfarbe: hellgrau</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <span>
           Hänge beim Anlegen eines Containers .Animal mittels addEventListener einen click-Event,
           in dem die Klasse Selected an den Container .Animal hinzugefügt bzw. entfernt wird.
         </span>
-      </li>
-      <li>
-        <span>Style alle Elemente .Animal mit der Klasse Selected:</span>
-        <ol>
-          <li>Hintergrundfarbe: lightslategrey</li>
-          <li>Schriftfarbe: weiß</li>
-        </ol>
-      </li>
-      <li>
-        <span>
+                        </li>
+                        <li>
+                            <span>Style alle Elemente .Animal mit der Klasse Selected:</span>
+                            <ol>
+                                <li>Hintergrundfarbe: lightslategrey</li>
+                                <li>Schriftfarbe: weiß</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <span>
           Hänge mittels addEventListener einen click-Event an den Button #MoveAnimalsBtn, um alle Elemente
           .Animals mit der Klasse Selected in den jeweils anderen div-Container mit der Klasse .Fence zu verschieben.
         </span>
-      </li>
-      <li>
-        <span>Erweitere den Click-EventListener von #AddAnimalBtn:</span>
-        <ol>
-          <li>Überprüfe, ob der eingegebene Name aus der Textbox #AddAnimal bereits in beiden Elementen .Fence besteht.</li>
-          <li>Füge das neue Element .Animal alphabetisch sortiert in den Container #Fence1 ein.</li>
-        </ol>
-      </li>
-      <li>
-        <span>
+                        </li>
+                        <li>
+                            <span>Erweitere den Click-EventListener von #AddAnimalBtn:</span>
+                            <ol>
+                                <li>Überprüfe, ob der eingegebene Name aus der Textbox #AddAnimal bereits in beiden Elementen .Fence besteht.</li>
+                                <li>Füge das neue Element .Animal alphabetisch sortiert in den Container #Fence1 ein.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <span>
           Erweitere den Click-EventListener von #MoveAnimalsBtn: Verschiebe die selektieren Container .Animal und
           füge diese alphabetisch sortiert in den jeweiligen Container .Fence ein.
         </span>
-      </li>
-      <li>Ermögliche das Verschieben von .Animal per drag and drop in den jeweils anderen Container .Fence.</li>
-    </ol>
-  </div>
-</div>
+                        </li>
+                        <li>Ermögliche das Verschieben von .Animal per drag and drop in den jeweils anderen Container .Fence.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div id="animals" class="Task">
+            <div>
+                <input id="AddAnimal" type="text" placeholder="Huhn" />
+                <input id="AddAnimalBtn" type="button" value="Hinzufügen" />
+            </div>
+            <div id="AnimalsWrapper">
+                <div id="Fence1" class="Fence"></div>
+                <div>
+                    <input id="MoveAnimalsBtn" type="button" value="Austauschen" />
+                </div>
+                <div id="Fence2" class="Fence"></div>
+            </div>
+            <script src="task.js"></script>
+        </div>
     </div>
-    <div id="animals" class="Task">
-  <div>
-    <input id="AddAnimal" type="text" placeholder="Huhn" />
-    <input id="AddAnimalBtn" type="button" value="Hinzufügen" />
-  </div>
-  <div id="AnimalsWrapper">
-    <div id="Fence1" class="Fence"></div>
-    <div>
-      <input id="MoveAnimalsBtn" type="button" value="Austauschen" />
-    </div>
-    <div id="Fence2" class="Fence"></div>
-  </div>
-  <script src="task.js"></script>
-    </div>
-  </div>
 </body>
+
 </html>

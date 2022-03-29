@@ -5,11 +5,11 @@
     align-items: center;
 }
 
-#AnimalsWrapper > div {
+#AnimalsWrapper>div {
     margin: 10px 0;
 }
 
-#AnimalsWrapper > div + div {
+#AnimalsWrapper>div+div {
     margin-left: 5px;
 }
 
@@ -18,4 +18,17 @@
     flex: 1;
     height: 100%;
     overflow: auto;
+}
+
+.Animal {
+    background-color: gray;
+    color: darkgreen;
+    margin: 3px;
+    min-width: 40px;
+    padding: 5px;
+}
+
+.Selected {
+    background-color: lightslategray;
+    color: white;
 }

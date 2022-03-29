@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Backend_7"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        ResizeMode="NoResize"
+        Title="TicTacToe" Height="450" Width="450" Background="#FF1E1E1E">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF525252"/>
+            <Setter Property="BorderThickness" Value="2.5"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="FontSize" Value="60"/>
+        </Style>
+    </Window.Resources>
+    <Grid Name="Container" Width="450" Height="450" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Button Click="Button_Click" Name="Button_00" Grid.Column="0" Grid.Row="0"/>
+        <Button Click="Button_Click" Name="Button_01" Grid.Column="0" Grid.Row="1"/>
+        <Button Click="Button_Click" Name="Button_02" Grid.Column="0" Grid.Row="2"/>
 
+        <Button Click="Button_Click" Name="Button_10" Grid.Column="1" Grid.Row="0"/>
+        <Button Click="Button_Click" Name="Button_11" Grid.Column="1" Grid.Row="1"/>
+        <Button Click="Button_Click" Name="Button_12" Grid.Column="1" Grid.Row="2"/>
+
+        <Button Click="Button_Click" Name="Button_20" Grid.Column="2" Grid.Row="0"/>
+        <Button Click="Button_Click" Name="Button_21" Grid.Column="2" Grid.Row="1"/>
+        <Button Click="Button_Click" Name="Button_22" Grid.Column="2" Grid.Row="2"/>
     </Grid>
 </Window>
