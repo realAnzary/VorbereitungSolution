@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Backend_7"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="TicTacToe" Height="450" Width="450" Background="#FF1E1E1E">
+        Title="TicTacToe" Height="540" Width="520" Background="#FF1E1E1E">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#FF525252"/>
@@ -15,16 +15,16 @@
             <Setter Property="FontSize" Value="60"/>
         </Style>
     </Window.Resources>
-    <Grid Name="Container" Width="450" Height="450" VerticalAlignment="Top">
+    <Grid Name="Container" Width="500" Height="500" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Button Click="Button_Click" Name="Button_00" Grid.Column="0" Grid.Row="0"/>
         <Button Click="Button_Click" Name="Button_01" Grid.Column="0" Grid.Row="1"/>

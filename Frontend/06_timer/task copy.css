@@ -1,0 +1,76 @@
+﻿:root {
+    --color-btn: rgb(22, 22, 22);
+}
+
+#Task {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: .5rem;
+}
+
+.dw-Answer-Btn {
+    background-color: var(--color-btn);
+    color: white;
+    font-size: 1.5rem;
+    padding: .5rem;
+    /*padding: .5rem;
+        border-radius: 15px;
+        margin: 1rem;*/
+}
+
+#dw-Timer {
+    font-size: 2rem;
+    grid-area: timer;
+    line-height: 2.75;
+}
+
+#dw-Score {
+    font-size: 2rem;
+    grid-area: score;
+    line-height: 2.75;
+}
+
+#dw-Task {
+    font-size: 2rem;
+    grid-area: task;
+    line-height: 2.75;
+}
+
+.Container-Grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 5rem 6rem 6rem 4rem 4rem;
+    grid-template-areas: "start start start start" "timer timer score score" "task task task task" "btn1 btn1  btn2 btn2" "btn3 btn3 btn4 btn4";
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.Container-Grid>* {
+    justify-self: stretch;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#dw-Btn1 {
+    grid-area: btn1;
+}
+
+#dw-Btn2 {
+    grid-area: btn2;
+}
+
+#dw-Btn3 {
+    grid-area: btn3;
+}
+
+#dw-Btn4 {
+    grid-area: btn4;
+}
+
+#dw-StartBtn {
+    background-color: var(--color-btn);
+    grid-area: start;
+    font-size: 2rem;
+    color: white;
+}

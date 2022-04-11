@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Workshop 1</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link href="task copy.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="Main">
+        <div class="TaskDescription">
+            <h1>
+                Rechenaufgaben
+            </h1>
+            <div>
+                <p>Aufgabe: Erstelle ein Spiel, bei dem der Nutzer begrenzte Zeit hat, um Rechenaufgaben zu lösen</p>
+                <div>
+                    <ol>
+                        <li>
+                            <span>Erstelle das Spielfeld</span>
+                            <ul>
+                                <li>In der oberen Hälfte des Spielfelds befindet sich ein Div, in dem die Aufgabe steht</li>
+                                <li>Unterhalb des Divs befinden sich die verschiedenen Antwortmöglichkeiten</li>
+                                <li>Oben rechts in der Ecke befindet sich ein Timer</li>
+                                <li>Oben links im Feld befindet sich ein Feld für den Punktestand</li>
+                            </ul>
+                        </li>
+                        <li>Über dem Spielfeld befindet sich ein Button um ein neues Spiel zu starten</li>
+                        <li>
+                            <span>Startet der Spieler ein neues Spiel, passiert folgendes:</span>
+                            <ol>
+                                <li>Der Timer wird auf 30 Sekunden gesetzt</li>
+                                <li>Der Punktestand wird auf 0 gesetzt</li>
+                                <li>Die erste Runde wird gestartet</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <span>In einer Runde kann passiert folgendes:</span>
+                            <ul>
+                                <li>
+                                    <span>Es wird eine zufällige Rechenaufgabe gestellt:</span>
+                                    <ul>
+                                        <li>Hierzu werden 2 bis 3 Zahlen mit zufälligen Rechenoperatoren (+ - / x) verknüpft</li>
+                                        <li>Bei den Antwortmöglichkeiten ist die richtige und drei Falsche zufällige Antworten dabei</li>
+                                    </ul>
+                                </li>
+                                <li>Der Nutzer wählt mit einem Klick oder per Pfeiltasten eine Antwort aus (die erste Antwort ist die linke Pfeiltaste, die zweite die obere, usw.)</li>
+                                <li>Ist die Antwort richtig, werden den Timer 5 Sekunden gut geschrieben</li>
+                                <li>Ist die Antwort falsch, werden 5 Sekunden abgezogen</li>
+                                <li>Ist der Timer abgelaufen, wird das Spiel sofort beendet</li>
+                            </ul>
+                        </li>
+                        <li>Gestalte das Spiel so, dass es gut aussieht</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div id="timer" class="Task">
+            <div class="Container-Grid">
+                <input id="dw-StartBtn" type="button" value="Start">
+                <span id="dw-Timer">Time: Start a new Game</span>
+                <span id="dw-Score">Score: 0</span>
+                <span id="dw-Task">Aufgabe: 5 + 5</span>
+                <input id="dw-Btn1" class="dw-Answer-Btn" type="button" value="Btn 1">
+                <input id="dw-Btn2" class="dw-Answer-Btn" type="button" value="Btn 2">
+                <input id="dw-Btn3" class="dw-Answer-Btn" type="button" value="Btn 3">
+                <input id="dw-Btn4" class="dw-Answer-Btn" type="button" value="Btn 4">
+            </div>
+            <script src="task.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
