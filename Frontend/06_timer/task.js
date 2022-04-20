@@ -1,5 +1,5 @@
 ﻿// Vars
-cheat = false;
+cheat = true;
 gameRunning = false;
 remainingTime = 0;
 rightAnswer = 0;
@@ -13,6 +13,7 @@ startBtn.addEventListener("click", () => {
     console.log("Start");
     gameRunning = true;
     startBtn.style.display = "None";
+    last.style.display = "Block";
     remainingTime = 15;
     points = 0;
     timerId = setInterval(timerFnc, 1000);
@@ -30,6 +31,7 @@ for (let index = 0; index < answerBtns.length; index++) {
         }
     });
 }
+var last = document.getElementById("dw-lastRound");
 var score = document.getElementById("dw-Score");
 var timer = document.getElementById("dw-Timer");
 var task = document.getElementById("dw-Task");
@@ -44,6 +46,7 @@ function timerFnc() {
         console.log("Time over");
         window.clearInterval(timerId);
         startBtn.style.display = "Block";
+        last.style.display = "None";
         timer.innerText = `Time: Game Over`;
         gameRunning = false;
     }
@@ -53,10 +56,12 @@ function checkAnswer() {
     if (gameRunning) {
         if (this.value == rightAnswer) {
             console.log("Right");
+            last.innerText = `Last Round: Right`;
             updateScore(1);
             addTime(5);
         } else {
             console.log("Wrong");
+            last.innerText = `Last Round: Wrong`;
             addTime(-5);
         }
         newTask();

@@ -40,7 +40,7 @@
 .Container-Grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 5rem 6rem 6rem 4rem 4rem;
+    grid-template-rows: 6rem 6rem 6rem 4rem 4rem;
     grid-template-areas: "start start start start" "timer timer score score" "task task task task" "btn1 btn1  btn2 btn2" "btn3 btn3 btn4 btn4";
     padding-left: 6rem;
     padding-right: 6rem;
@@ -73,4 +73,11 @@
     grid-area: start;
     font-size: 2rem;
     color: white;
+}
+
+#dw-lastRound {
+    display: none;
+    grid-area: start;
+    font-size: 2rem;
+    line-height: 2.75;
 }

@@ -4,11 +4,13 @@
     {
         public static void Main(string[] args)
         {
-            string[] shapeCircle = new[] { "kreis", "circle" };
-            string[] shapeRectangle = new[] { "rechteck", "rectangle" };
-            string[] shapeTriangle = new[] { "dreieck", "triangle" };
-            string[] stringQuit = new[] { "quit", "close", "exit", "verlassen", "q" };
+            // List of all the accepted shapes and synonyms of the shape; all lower-case
+            string[] shapeCircleNames = new[] { "kreis", "circle" };
+            string[] shapeRectangleNames = new[] { "rechteck", "rectangle" };
+            string[] shapeTriangleNames = new[] { "dreieck", "triangle" };
+            string[] stringQuit = new[] { "quit", "close", "exit", "verlassen", "q", string.Empty };
 
+            // Get User-Input: Name of the shape
             while (true)
             {
                 Console.WriteLine("----------------------------------------------------------------------------------------------------");
@@ -16,43 +18,54 @@
                 Console.WriteLine("Zulässige Eingaben:\n \"Dreieck\", \"Triangle\", \"Rechteck\", \"Rectangle\", \"Kreis\", \"Circle\"");
                 Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 Console.Write("Eingabe der Form: ");
+
+                // Convert User-Input to lower-case
                 string? eingabe = Console.ReadLine().ToLower();
 
-                if (shapeCircle.Contains(eingabe))
+                // Execute the correct function to start the calculation process
+                if (shapeCircleNames.Contains(eingabe))
                 {
-                    Console.WriteLine("Circle ausgewählt");
+                    Console.WriteLine("´Kreis ausgewählt");
                     CalcCircle();
                 }
-                else if (shapeRectangle.Contains(eingabe))
+                else if (shapeRectangleNames.Contains(eingabe))
                 {
-                    Console.WriteLine("Rectangle ausgewählt");
+                    Console.WriteLine("Rechteck ausgewählt");
                     CalcRectangle();
                 }
-                else if (shapeTriangle.Contains(eingabe))
+                else if (shapeTriangleNames.Contains(eingabe))
                 {
-                    Console.WriteLine("Triangle ausgewählt");
+                    Console.WriteLine("Dreieck ausgewählt");
                     CalcTriangle();
                 }
                 else if (stringQuit.Contains(eingabe))
                 {
+                    // Quit the application
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Keine richtige Eingabe");
+                    // Unknown or unaccepted Input
+                    Console.WriteLine("Keine gültige Eingabe!");
                 }
 
                 Console.WriteLine();
             }
         }
 
+        /// <summary>
+        /// Method to calculate radius and area of a circle.
+        /// </summary>
         public static void CalcCircle()
         {
             Console.WriteLine("Berechne Kreis...");
             Console.WriteLine();
+
+            // Variables
             double radius = 0.0d;
             bool wrong_input = false;
 
+            // Get User-Input for radius
             do
             {
                 wrong_input = false;
@@ -69,28 +82,35 @@
             }
             while (wrong_input);
 
+            // Output of perimeter and area of a circle
             Console.WriteLine($"Gewählter Radius: {radius}");
             Console.WriteLine();
             Console.WriteLine($"Flächeninhalt: {Math.Round(Math.PI * Math.Pow(radius, 2), 2)}cm^2 Umfang: {Math.Round(2 * Math.PI * radius, 2)}cm");
         }
 
+        /// <summary>
+        /// Method to calculate area and perimeter of a rectangle.
+        /// </summary>
         public static void CalcRectangle()
         {
             Console.WriteLine("Berechne Rechteck...");
             Console.WriteLine();
-            double site_a = 0.0d;
-            double site_b = 0.0d;
+
+            // Variables
+            double sideA = 0.0d;
+            double sideB = 0.0d;
             bool wrong_input = false;
 
+            // Get User-Input for both sides of rectangle
             do
             {
                 wrong_input = false;
                 try
                 {
                     Console.Write("Seitenlänge A eingeben (in cm): ");
-                    site_a = Convert.ToDouble(Console.ReadLine());
+                    sideA = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Seitenlänge B eingeben (in cm): ");
-                    site_b = Convert.ToDouble(Console.ReadLine());
+                    sideB = Convert.ToDouble(Console.ReadLine());
                 }
                 catch (Exception ex)
                 {
@@ -100,31 +120,38 @@
             }
             while (wrong_input);
 
-            Console.WriteLine($"Gewählte Seitenlänge A: {site_a}cm B: {site_b}cm");
+            // Output of area and perimeter
+            Console.WriteLine($"Gewählte Seitenlänge A: {sideA}cm || B: {sideB}cm");
             Console.WriteLine();
-            Console.WriteLine($"Flächeninhalt: {Math.Round(site_a * site_b, 2)}cm^2 Umfang: {Math.Round(2 * (site_a + site_b), 2)}cm");
+            Console.WriteLine($"Flächeninhalt: {Math.Round(sideA * sideB, 2)}cm^2 Umfang: {Math.Round(2 * (sideA + sideB), 2)}cm");
         }
 
+        /// <summary>
+        /// Method to calculate area and perimeter of a triangle.
+        /// </summary>
         public static void CalcTriangle()
         {
             Console.WriteLine("Berechne Dreieck...");
             Console.WriteLine();
-            double site_a = 0.0d;
-            double site_b = 0.0d;
-            double site_c = 0.0d;
+
+            // Variables
+            double sideA = 0.0d;
+            double sideB = 0.0d;
+            double sideC = 0.0d;
             bool wrong_input = false;
 
+            // Get User-Input for the three sides
             do
             {
                 wrong_input = false;
                 try
                 {
                     Console.Write("Seitenlänge A(Kathete) eingeben (in cm): ");
-                    site_a = Convert.ToDouble(Console.ReadLine());
+                    sideA = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Seitenlänge B(Kathete) eingeben (in cm): ");
-                    site_b = Convert.ToDouble(Console.ReadLine());
+                    sideB = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Seitenlänge C(Hypothenuse) eingeben (in cm): ");
-                    site_c = Convert.ToDouble(Console.ReadLine());
+                    sideC = Convert.ToDouble(Console.ReadLine());
                 }
                 catch (Exception ex)
                 {
@@ -133,9 +160,11 @@
                 }
             }
             while (wrong_input);
-            Console.WriteLine($"Gewählte Seitenlänge A: {site_a}cm B: {site_b}cm C: {site_c}cm");
+
+            // Output area and perimeter
+            Console.WriteLine($"Gewählte Seitenlänge A: {sideA} || cm B: {sideB}  || cm C: {sideC}cm");
             Console.WriteLine();
-            Console.WriteLine($"Flächeninhalt: {Math.Round(site_a * site_b * .5, 2)}cm^2 Umfang: {Math.Round(site_a + site_b + site_c, 2)}cm");
+            Console.WriteLine($"Flächeninhalt: {Math.Round(sideA * sideB * .5, 2)}cm^2 Umfang: {Math.Round(sideA + sideB + sideC, 2)}cm");
         }
     }
 }

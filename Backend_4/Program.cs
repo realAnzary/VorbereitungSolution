@@ -4,6 +4,7 @@
     {
         public static void Main(string[] args)
         {
+            // Get User-Input: Number to convert; Base of the Number to convert; Base of the result
             Console.Write("Zahl zum Umrechnen  (leer lassen zum verlassen): ");
             string? number = Console.ReadLine();
 
@@ -26,41 +27,37 @@
             }
         }
 
+        /// <summary>
+        /// Takes an integer and converts it to the respective character.
+        /// </summary>
+        /// <param name="value">Number to convert</param>
+        /// <returns>Character of the Number</returns>
         public static char IntToChar(int value)
         {
-            /*
-            Ascii tabelle: char => int
-            '0' => 48
-            'A' => 65
-            'Z' => 90
-            my number needs to be between 65 and 90 to convert number > 9 to a character
-            Example:
-             */
             char result;
 
             if (value < 10)
             {
-                // look up int vlaue of '0' add the number and then look up what the char value of the sum is
-                // alternative: result = (char)('0' + value);
                 result = (char)(48 + value);
             }
             else
             {
-                // alternative: result = (char)('A' - 10 + value); or = (char)('7' + value);
-                // cant start with (int)'A' because value will always be atleast 10, but if it is 10 then i dont want to add it to (int)'A' becasue that would give 'K' or 75  and not 'A' or 65
-                // so i either start with 55 (10 less then (int)'A') or i subtract 10
                 result = (char)(55 + value);
             }
 
             return result;
         }
 
+        /// <summary>
+        /// Takes a character and converts it to the respective integer.
+        /// </summary>
+        /// <param name="digit">CHarcter to convert</param>
+        /// <returns>Integer of the character</returns>
         public static int CharToInt(char digit)
         {
             int result;
             if (digit >= '0' && digit <= '9')
             {
-                // calc the Ascii code difference of the number and ascii code for '0'
                 result = digit - '0';
             }
             else
@@ -71,6 +68,13 @@
             return result;
         }
 
+        /// <summary>
+        /// Converts a number from any base to a new number with a specific base.
+        /// </summary>
+        /// <param name="number">Number to convert</param>
+        /// <param name="numberBase">Base of the number thats being converted</param>
+        /// <param name="newBase">Base of the resulting number</param>
+        /// <returns>Number with the new base</returns>
         public static string ConvertNumber(string number, int numberBase, int newBase)
         {
             string newNumber = string.Empty;
@@ -90,7 +94,7 @@
             return newNumber;
         }
 
-        public static string Divide(string number, int numberBase, int divisor, out int remainder)
+        private static string Divide(string number, int numberBase, int divisor, out int remainder)
         {
             remainder = 0;
             var result = string.Empty;
