@@ -1,8 +1,8 @@
-﻿var addAnimalBtn = document.getElementById("AddAnimalBtn");
+﻿var addAnimalBtn = document.getElementById("add-animal-btn");
 addAnimalBtn.addEventListener("click", () => {
-    let fence1 = document.getElementById("Fence1");
-    let fence2 = document.getElementById("Fence2");
-    let nameInput = document.getElementById("AddAnimal");
+    let fence1 = document.getElementById("fence-1");
+    let fence2 = document.getElementById("fence-2");
+    let nameInput = document.getElementById("add-animal");
     let alreadyInFence1 = false;
     let alreadyInFence2 = false;
 
@@ -25,7 +25,7 @@ addAnimalBtn.addEventListener("click", () => {
     if (!alreadyInFence1 && !alreadyInFence2) {
 
         newAnimal = document.createElement("div");
-        newAnimal.classList.add("Animal");
+        newAnimal.classList.add("animal");
         newSpan = document.createElement("span");
         newSpan.innerHTML = nameInput.value;
         newAnimal.appendChild(newSpan);
@@ -39,24 +39,24 @@ addAnimalBtn.addEventListener("click", () => {
 })
 
 function clickFunction() {
-    if (this.classList.contains("Selected")) {
-        this.classList.remove("Selected");
+    if (this.classList.contains("selected")) {
+        this.classList.remove("selected");
     } else {
-        this.classList.add("Selected");
+        this.classList.add("selected");
     }
 }
 
-var moveAnimalBtn = document.getElementById("MoveAnimalsBtn");
+var moveAnimalBtn = document.getElementById("move-animals-btn");
 moveAnimalBtn.addEventListener("click", () => {
-    let fence1 = document.getElementById("Fence1");
-    let fence2 = document.getElementById("Fence2");
+    let fence1 = document.getElementById("fence-1");
+    let fence2 = document.getElementById("fence-2");
 
     if (fence1.childElementCount > 0) {
         for (let i = fence1.childElementCount - 1; i > -1; i--) {
             let element = fence1.children[i];
-            if (element.classList.contains("Selected")) {
+            if (element.classList.contains("selected")) {
                 fence2.appendChild(element);
-                element.classList.remove("Selected");
+                element.classList.remove("selected");
             }
         }
     }
@@ -64,9 +64,9 @@ moveAnimalBtn.addEventListener("click", () => {
     if (fence2.childElementCount > 0) {
         for (let i = fence2.childElementCount - 1; i > -1; i--) {
             let element = fence2.children[i];
-            if (element.classList.contains("Selected")) {
+            if (element.classList.contains("selected")) {
                 fence1.appendChild(element);
-                element.classList.remove("Selected");
+                element.classList.remove("selected");
             }
         }
     }
@@ -74,8 +74,8 @@ moveAnimalBtn.addEventListener("click", () => {
 })
 
 function SortFence() {
-    let fence1 = document.getElementById("Fence1");
-    let fence2 = document.getElementById("Fence2");
+    let fence1 = document.getElementById("fence-1");
+    let fence2 = document.getElementById("fence-2");
 
     let list = [];
 
@@ -108,7 +108,7 @@ function SortFence() {
     }
 }
 
-var fences = document.querySelectorAll('.Fence');
+var fences = document.querySelectorAll('.fence');
 fences.forEach(fence => {
     fence.addEventListener('dragenter', dragEnter)
     fence.addEventListener('dragover', dragOver);
@@ -117,7 +117,7 @@ fences.forEach(fence => {
 })
 
 function dragstart(e) {
-    e.target.classList.add('Dragging');
+    e.target.classList.add('dragging');
 }
 
 
@@ -133,7 +133,7 @@ function dragOver(e) {
 function dragLeave(e) {}
 
 function drop(e) {
-    const draggable = document.getElementsByClassName("Dragging");
+    const draggable = document.getElementsByClassName("dragging");
     e.target.appendChild(draggable[0]);
-    draggable[0].classList.remove("Dragging");
+    draggable[0].classList.remove("dragging");
 }

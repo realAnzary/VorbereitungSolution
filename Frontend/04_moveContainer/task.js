@@ -4,7 +4,7 @@ moveContainer.style.backgroundColor = "green";
 moveContainer.style.borderColor = "yellow";
 // 3. Hänge einen click-Eventlistener an den Button #ToggleMoveContainerBtn, der den Container #MoveContainer ein- bzw. ausblendet
 var isVisible = true;
-var btnVisibilty = document.getElementById("ToggleMoveContainerBtn");
+var btnVisibilty = document.getElementById("toggle-move-container-btn");
 btnVisibilty.addEventListener("click", () => {
     if (isVisible) {
         console.log("Hide");
@@ -44,11 +44,7 @@ moveContainerBtn.addEventListener("click", () => {
         moveContainer.style.left = `${leftPos - steps}px`;
     }
 })
-
 var stepsBox = document.getElementById("move-container-steps");
-stepsBox.addEventListener("focusout", () => {
-    stepsBox.value = 100;
-})
 stepsBox.addEventListener("change", () => {
     if (stepsBox.value == "") {
         stepsBox.value = 100;

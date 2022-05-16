@@ -1,26 +1,26 @@
-﻿#AnimalsWrapper {
+﻿#animals-wrapper {
     display: flex;
     flex: 1;
     margin-top: 5px;
     align-items: center;
 }
 
-#AnimalsWrapper>div {
+#animals-wrapper>div {
     margin: 10px 0;
 }
 
-#AnimalsWrapper>div+div {
+#animals-wrapper>div+div {
     margin-left: 5px;
 }
 
-.Fence {
+.fence {
     border: thin solid #808080;
     flex: 1;
     height: 100%;
     overflow: auto;
 }
 
-.Animal {
+.animal {
     background-color: gray;
     color: darkgreen;
     margin: 3px;
@@ -28,7 +28,7 @@
     padding: 5px;
 }
 
-.Selected {
+.selected {
     background-color: lightslategray;
     color: white;
 }

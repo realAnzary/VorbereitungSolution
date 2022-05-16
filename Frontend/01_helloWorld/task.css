@@ -3,27 +3,25 @@ td {
     border: 1px solid black;
 }
 
-#YellowContainer {
+#yellow-container {
     background-color: yellow;
-    height: 200px;
-    width: 100px;
     padding: 10px;
 }
 
-#GreenContainer {
+#green-container {
     background-color: green;
     height: 200px;
     width: 100px;
-    margin: 10px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
     padding: 10px;
 }
 
-#YellowContainer>img {
+#yellow-container>img {
     width: 100%;
     height: 100%;
 }
 
-#HelloWorldBtn {
+#hello-world-btn {
     width: 50px;
     margin-top: 20px;
 }
@@ -31,6 +29,3 @@ td {
 #red {
     color: red;
 }
-
-
-/* Füge hier die Regeln ein um die jeweiligen Elemente zu stylen */

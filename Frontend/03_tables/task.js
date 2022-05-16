@@ -1,15 +1,16 @@
 ﻿function invert(str) {
-    //console.log(`Input: ${str}`);
+    // Reverses a string
     return str.split("").reverse().join("");
 }
 
 function read() {
+    // Reads the input area and creates the output
+    // Gets all substrings and counts them, outputs the string and amount in a table
     input = document.getElementById("input-area");
     inputString = input.value;
     input.value = "";
 
     seperatedStrings = inputString.split(",");
-    //console.log(seperatedStrings)
 
     table = document.getElementById("table-output");
     tblBody = document.createElement("tbody");
@@ -20,20 +21,20 @@ function read() {
     header.innerHTML = "<tr><td>Substring</td><td>Häufigkeit</td></tr>";
 
     const uniques = new Set(seperatedStrings);
-    //console.log(uniques);
     tbody = document.createElement("tbody");
 
     uniques.forEach(element => {
         currentSubString = element;
+        currentSubString = currentSubString.replace(" ", "");
 
+        console.log(currentSubString);
         counter = 0;
         seperatedStrings.forEach(object => {
-            if (object == element) {
+            object = object.replace(" ", "");
+            if (object == currentSubString) {
                 counter++;
             };
         });
-        //console.log(`Element: ${element} occured ${counter} times`);
-
 
         row = document.createElement("tr");
         tableObject = document.createElement("td");
@@ -47,10 +48,7 @@ function read() {
         row.appendChild(tableObject);
         row.appendChild(tableCounter);
 
-
         tbody.appendChild(row);
-
-
     });
 
     table.appendChild(tbody);
@@ -61,6 +59,7 @@ function read() {
 }
 
 function sort() {
+    // function to sort the output table
     const table = document.getElementById("table-output");
     switching = true;
 
@@ -87,13 +86,12 @@ function sort() {
 
 var btnInvert = document.getElementById("btn-invert");
 btnInvert.addEventListener("click", () => {
+    // inverts the text area
     input = document.getElementById("input-area");
-    //console.log(invert(input.value));
     input.value = invert(input.value);
 })
 
 var btnEvaluate = document.getElementById("btn-evaluate");
 btnEvaluate.addEventListener("click", () => {
-    //console.log("Do smth");
     read()
 })

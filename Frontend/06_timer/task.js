@@ -1,5 +1,5 @@
 ﻿// Vars
-cheat = true;
+cheat = false; // Colors the buttons to highlight the correct answers
 gameRunning = false;
 remainingTime = 0;
 rightAnswer = 0;
@@ -39,6 +39,7 @@ var task = document.getElementById("dw-Task");
 // Fncs
 
 function timerFnc() {
+    // Controlls the timer
     if (remainingTime > 0) {
         remainingTime--;
         timer.innerText = `Time: ${remainingTime}`;
@@ -53,6 +54,7 @@ function timerFnc() {
 }
 
 function checkAnswer() {
+    // CHecks if pressed button has the right answer
     if (gameRunning) {
         if (this.value == rightAnswer) {
             console.log("Right");
@@ -83,6 +85,7 @@ function addTime(toAdd) {
 }
 
 function newTask() {
+    // Generates a new task for the user and the results for all buttons
     if (cheat) {
 
         for (let index = 0; index < answerBtns.length; index++) {
@@ -137,6 +140,7 @@ function calculate(num1, num2, symbol, rounded) {
 }
 
 function fakeResults(correctAnswer) {
+    // Gives fake answers to the unused buttons
     fakeAnswers = [];
     max = 20;
     min = -20;
@@ -168,6 +172,7 @@ function fakeResults(correctAnswer) {
 }
 
 function shuffleArray(array) {
+    // randomly shuffle all array elements
     let currentIndex = array.length;
     let randomIndex;
     while (currentIndex != 0) {

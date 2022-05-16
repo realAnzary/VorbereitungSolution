@@ -1,32 +1,15 @@
-﻿function showError(error) {
-    var errorMessage = "Achtung, folgender Fehler ist aufgetreten: ";
-    errorMessage += error;
-    var errorWarning = document.getElementById("ErrorWarnings");
-    errorWarning.innerText = errorMessage;
-    errorWarning.style.display = "block";
-}
-
-function isNumeric(str) {
-    if (typeof str != "string") return false
-    return !isNaN(str) &&
-        !isNaN(parseFloat(str))
-}
-
-function clearError() {
-    errorfield = document.getElementById("ErrorWarnings")
-    errorfield.innerText = "";
-}
-
-var helloWorldBtn = document.getElementById("btn-submit");
+﻿var helloWorldBtn = document.getElementById("btn-submit");
 helloWorldBtn.addEventListener("click", function() {
+    // Function to alert user and greet with name
     input = document.getElementById("text-input");
     alert(`Willkommen auf der Seite, ${input.value}`);
 });
 
 var checkBtn = document.getElementById("btn-check");
 checkBtn.addEventListener("click", function() {
+    // Function to check the input field if its a number 
     input = document.getElementById("text-input");
-    if (!isNaN(input.value)) {
+    if (isNumeric(input.value)) {
         input.value = input.value * 2;
     } else {
         showError("Eingabe ist keine Zahl oder beinhaltet Zeichen");
@@ -35,11 +18,13 @@ checkBtn.addEventListener("click", function() {
 
 var clearBtn = document.getElementById("btn-clear");
 clearBtn.addEventListener("click", function() {
+    // Function to clear the error box
     clearError()
 });
 
 var calcBtn = document.getElementById("btn-calculate");
 calcBtn.addEventListener("click", function() {
+    // Function to make the "calculator work
     number1 = document.getElementById("number-input1");
     number2 = document.getElementById("number-input2");
     out = document.getElementById("number-output");
@@ -78,3 +63,25 @@ calcBtn.addEventListener("click", function() {
         }
     }
 })
+
+function showError(error) {
+    // Creates an error message and shows it in the error box
+    var errorMessage = "Achtung, folgender Fehler ist aufgetreten: ";
+    errorMessage += error;
+    var errorWarning = document.getElementById("error-warnings");
+    errorWarning.innerText = errorMessage;
+    errorWarning.style.display = "block";
+}
+
+function isNumeric(str) {
+    // Checks if string is just a number
+    if (typeof str != "string") return false
+    return !isNaN(str) &&
+        !isNaN(parseFloat(str))
+}
+
+function clearError() {
+    // Clears the error box
+    errorfield = document.getElementById("error-warnings")
+    errorfield.innerText = "";
+}
